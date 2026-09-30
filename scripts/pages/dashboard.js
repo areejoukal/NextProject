@@ -306,40 +306,17 @@
     }
 
     /* =====================================================
-       REVEAL UI
-       ===================================================== */
-
-    function initRevealUI() {
-        const elements = document.querySelectorAll('.reveal');
-
-        const prefersReduced = window.matchMedia(
-            '(prefers-reduced-motion: reduce)'
-        ).matches;
-
-        if (prefersReduced) {
-            elements.forEach(el => el.classList.add('visible'));
-            return;
-        }
-
-        const observer = new IntersectionObserver(
-            (entries, obs) => {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) return;
-                    entry.target.classList.add('visible');
-                    obs.unobserve(entry.target);
-                });
-            },
-            { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
-        );
-
-        elements.forEach(el => observer.observe(el));
-    }
-
-    /* =====================================================
        INIT
+       =====================================================
+       
+       ملاحظة مهمة:
+       - initMobileSidebar() و initRevealUI() انتقلتا إلى components.js
+       - components.js يشغّلهما تلقائياً على كل الصفحات
+       - لا حاجة لاستدعائهما هنا (وإلا سيحدث تعارض)
        ===================================================== */
 
     function init() {
+        // ✅ تحميل بيانات الصفحة
         loadUser();
         loadGoal();
         loadPosition();
@@ -347,14 +324,17 @@
         loadUpcoming();
         loadProgress();
 
+        // ✅ عناصر dashboard الخاصة
         updateNotificationsBadge();
         setupCurrentStepButton();
-        initMobileSidebar();
 
-        setTimeout(initRevealUI, 60);
+        // ❌ لا نستدعي initMobileSidebar (في components.js)
+        // ❌ لا نستدعي initRevealUI (في components.js)
+
+        console.log('📄 dashboard: init complete');
     }
 
-    // نشغّلها فورًا — DOM جاهز
+    // نشغّلها فوراً — DOM جاهز لأن السكربت في نهاية body
     init();
 
 })();
