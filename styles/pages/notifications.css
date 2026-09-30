@@ -1,0 +1,285 @@
+/* =====================================================
+   NEXT — NOTIFICATIONS PAGE
+   notifications.html
+   ===================================================== */
+
+/* =====================================================
+   NOTIFICATIONS CARD (البطاقة الرئيسية)
+   ===================================================== */
+
+.card {
+    background: var(--next-surface);
+    border: 1px solid var(--next-border);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--next-shadow-soft);
+    transition:
+        border-color var(--motion-dur-base) var(--motion-ease-soft),
+        box-shadow var(--motion-dur-base) var(--motion-ease-soft);
+}
+
+.card:hover {
+    border-color: #D1D5DB;
+    box-shadow: 0 8px 22px rgba(17, 24, 39, 0.06);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 20px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--next-border);
+}
+
+.card-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: var(--next-ink);
+}
+
+.card-description {
+    font-size: 13px;
+    color: var(--next-muted);
+    line-height: 1.7;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#unreadCount {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 7px;
+    background: #EFF6FF;
+    color: var(--next-blue);
+    border-radius: 999px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* =====================================================
+   SECONDARY BUTTON (تعليم الكل كمقروء)
+   ===================================================== */
+
+.secondary-button {
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 18px;
+    border: 1px solid var(--next-border);
+    border-radius: 10px;
+    background: var(--next-surface);
+    color: var(--next-ink);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+        background-color var(--motion-dur-fast) var(--motion-ease-soft),
+        border-color var(--motion-dur-fast) var(--motion-ease-soft),
+        transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+.secondary-button:hover {
+    background: #F9FAFB;
+    border-color: #D1D5DB;
+}
+
+.secondary-button:active {
+    transform: translateY(0);
+}
+
+/* =====================================================
+   NOTIFICATIONS LIST
+   ===================================================== */
+
+#notificationsList {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Notification item (يُبنى من JS) */
+#notificationsList article {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 0;
+    border-bottom: 1px solid #F0F1F3;
+    cursor: pointer;
+    transition:
+        background-color var(--motion-dur-fast) var(--motion-ease-soft),
+        padding-inline var(--motion-dur-base) var(--motion-ease-enter);
+    margin-inline: -24px;
+    padding-inline: 24px;
+}
+
+#notificationsList article:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+#notificationsList article:first-child {
+    padding-top: 16px;
+}
+
+#notificationsList article:hover {
+    background: #FCFCFD;
+}
+
+#notificationsList article[style*="background: #F8FAFF"] {
+    background: #F8FAFF;
+}
+
+#notificationsList article[style*="background: #F8FAFF"]:hover {
+    background: #F1F6FF;
+}
+
+/* أيقونة الإشعار */
+#notificationsList article > div:first-child {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #EFF6FF;
+    color: var(--next-blue);
+    transition: transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+#notificationsList article:hover > div:first-child {
+    transform: scale(1.06);
+}
+
+/* محتوى الإشعار */
+#notificationsList article > div:nth-child(2) {
+    flex: 1;
+    min-width: 0;
+}
+
+/* =====================================================
+   EMPTY STATE
+   ===================================================== */
+
+.empty-state {
+    padding: 72px 24px;
+    text-align: center;
+}
+
+.empty-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: var(--next-bg);
+    color: var(--next-muted);
+}
+
+.empty-title {
+    color: var(--next-ink);
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.empty-text {
+    max-width: 420px;
+    margin: 0 auto;
+    color: var(--next-muted);
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+/* =====================================================
+   TOAST
+   ===================================================== */
+
+body > .toast {
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    z-index: 100;
+    min-width: 260px;
+    max-width: 360px;
+    padding: 14px 18px;
+    background: var(--next-ink);
+    color: #FFFFFF;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+    box-shadow: var(--next-shadow-large);
+    opacity: 0;
+    transform: translateY(var(--motion-distance-sm));
+    pointer-events: none;
+    transition:
+        opacity var(--motion-dur-base) var(--motion-ease-soft),
+        transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+body > .toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 700px) {
+    .card {
+        padding: 20px;
+    }
+
+    .card-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .card-header .secondary-button {
+        width: 100%;
+    }
+
+    #notificationsList article {
+        margin-inline: -20px;
+        padding-inline: 20px;
+        gap: 12px;
+    }
+
+    #notificationsList article > div:first-child {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+    }
+
+    body > .toast {
+        left: 16px;
+        right: 16px;
+        min-width: 0;
+        max-width: none;
+    }
+}
+
+/* =====================================================
+   REDUCED MOTION
+   ====================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    #notificationsList article:hover > div:first-child {
+        transform: none;
+    }
+}

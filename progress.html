@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>تقدّمك — NEXT</title>
+    <meta name="description" content="صفحة تقدّمك في NEXT — تابع الخطوات التي أنجزتها، وما تغيّر في رحلتك، وما يستحق انتباهك الآن.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://next.app/progress.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEXT">
+    <meta property="og:locale" content="ar_AR">
+    <meta property="og:title" content="تقدّمك — NEXT">
+    <meta property="og:description" content="تابع الخطوات التي أنجزتها، وما تغيّر في رحلتك، وما يستحق انتباهك الآن.">
+    <meta property="og:url" content="https://next.app/progress.html">
+    <meta property="og:image" content="https://next.app/icons/og-progress.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEXT — تقدّمك">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="تقدّمك — NEXT">
+    <meta name="twitter:description" content="تابع الخطوات التي أنجزتها، وما تغيّر في رحلتك.">
+    <meta name="twitter:image" content="https://next.app/icons/og-progress.png">
+    <meta name="twitter:image:alt" content="NEXT — تقدّمك">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#F7F8FA">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-72.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NEXT">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="NEXT">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        next: {
+                            blue: '#2563EB',
+                            blueDark: '#1D4ED8',
+                            ink: '#111827',
+                            muted: '#6B7280',
+                            mutedStrong: '#4B5563',
+                            bg: '#F7F8FA',
+                            surface: '#FFFFFF',
+                            border: '#E5E7EB',
+                            success: '#16A34A',
+                            warning: '#D97706',
+                            danger: '#DC2626'
+                        }
+                    },
+                    fontFamily: {
+                        arabic: ['IBM Plex Sans Arabic', 'sans-serif'],
+                        poppins: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/motion.css">
+    <link rel="stylesheet" href="styles/pages/progress.css">
+</head>
+
+<body data-page="progress">
+
+    <div class="app-shell">
+
+        <div id="sidebarOverlay" class="sidebar-overlay" aria-hidden="true"></div>
+
+        <div data-component="sidebar"></div>
+
+        <div class="main-area">
+
+            <div data-component="topbar"></div>
+
+            <main class="page-container">
+
+                <section class="page-header reveal" style="--i: 0;">
+                    <div class="page-kicker">
+                        <span class="page-kicker-dot" aria-hidden="true"></span>
+                        رحلة مستمرة
+                    </div>
+                    <h1 class="page-title">تقدّمك</h1>
+                    <p class="page-description">
+                        ليس المهم كم أنجزت فقط. المهم أن تعرف ما الذي تغيّر،
+                        وما الذي اكتمل، وما الذي لا يزال يستحق انتباهك.
+                    </p>
+                </section>
+
+                <section class="metrics-grid reveal" style="--i: 1;" aria-live="polite">
+                    <div class="metric">
+                        <div class="metric-body" style="width: 100%;">
+                            <div class="metric-label">خطوات مكتملة</div>
+                            <div id="completedCount" class="metric-value">0</div>
+                            <div style="font-size: 12px; color: var(--next-muted); margin-top: 6px;">من أصل 3 خطوات في رحلتك.</div>
+                        </div>
+                    </div>
+
+                    <div class="metric">
+                        <div class="metric-body" style="width: 100%;">
+                            <div class="metric-label">الخطوة الحالية</div>
+                            <div id="currentStatus" class="metric-value" style="font-size: 16px;">—</div>
+                            <div style="font-size: 12px; color: var(--next-muted); margin-top: 6px;">ما تعمل عليه الآن.</div>
+                        </div>
+                    </div>
+
+                    <div class="metric">
+                        <div class="metric-body" style="width: 100%;">
+                            <div class="metric-label">آخر تحديث</div>
+                            <div id="lastUpdated" class="metric-value" style="font-size: 16px;">—</div>
+                            <div style="font-size: 12px; color: var(--next-muted); margin-top: 6px;">آخر مرة تم فيها تحديث تقدمك.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="progress-card reveal" style="--i: 2;">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">أين وصلت؟</h2>
+                            <p class="card-description">
+                                هذا المؤشر يعكس الخطوات التي أنجزتها،
+                                وليس توقعًا لنتيجتك النهائية.
+                            </p>
+                        </div>
+                        <div id="progressNumber" class="progress-number" aria-live="polite">0%</div>
+                    </div>
+
+                    <div class="progress-track">
+                        <div id="progressFill" class="progress-fill"></div>
+                    </div>
+
+                    <div class="progress-footer">
+                        <span id="progressCompletedText">0 من 3 خطوات مكتملة</span>
+                        <span>التقدم الفعلي</span>
+                    </div>
+                </section>
+
+                <section class="card reveal" style="--i: 3;">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">سجل تقدمك</h2>
+                            <p class="card-description">الأمور التي تغيّرت أو أنجزتها مؤخرًا.</p>
+                        </div>
+                    </div>
+
+                    <div id="activityList"></div>
+                </section>
+
+                <section class="next-action reveal" style="--i: 4;">
+                    <div class="next-action-content">
+                        <div class="next-action-label">مراجعة دورية</div>
+                        <div class="next-action-title">هل تشعر أن وضعك تغيّر؟</div>
+                        <div class="next-action-text">
+                            لا حاجة للبقاء على الخطة نفسها إذا تغيّرت ظروفك،
+                            أو هدفك، أو فهمك لوضعك. أعد التقييم،
+                            ولنفهم وضعك من جديد.
+                        </div>
+                    </div>
+
+                    <button id="reassessmentButton" class="primary-button" type="button" data-cta="start-reassessment">
+                        <span>أعد فهم وضعي</span>
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m13 6 6 6-6 6"></path>
+                        </svg>
+                    </button>
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <script src="scripts/core/storage.js"></script>
+    <script src="scripts/core/session.js"></script>
+    <script src="scripts/core/nav-config.js"></script>
+    <script src="scripts/core/components.js"></script>
+    <script src="scripts/core/ui.js"></script>
+    <script src="scripts/core/motion.js"></script>
+    <script src="scripts/pages/progress.js"></script>
+    <!-- PWA Script -->
+    <script src="scripts/core/pwa.js"></script>
+</body>
+
+</html>

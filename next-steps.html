@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>خطوتك التالية — NEXT</title>
+    <meta name="description" content="صفحة خطوتك التالية في NEXT — الخطوة الأولى بالأولوية، والخطوتان التاليتان بعدها، مع سبب اختيار كل خطوة.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://next.app/next-steps.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEXT">
+    <meta property="og:locale" content="ar_AR">
+    <meta property="og:title" content="خطوتك التالية — NEXT">
+    <meta property="og:description" content="الخطوة الأولى بالأولوية، والخطوتان التاليتان بعدها، مع سبب اختيار كل خطوة.">
+    <meta property="og:url" content="https://next.app/next-steps.html">
+    <meta property="og:image" content="https://next.app/icons/og-next-steps.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEXT — خطوتك التالية">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="خطوتك التالية — NEXT">
+    <meta name="twitter:description" content="الخطوة الأولى بالأولوية، والخطوتان التاليتان بعدها.">
+    <meta name="twitter:image" content="https://next.app/icons/og-next-steps.png">
+    <meta name="twitter:image:alt" content="NEXT — خطوتك التالية">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#F7F8FA">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-72.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NEXT">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="NEXT">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        next: {
+                            blue: '#2563EB',
+                            blueDark: '#1D4ED8',
+                            ink: '#111827',
+                            muted: '#6B7280',
+                            mutedStrong: '#4B5563',
+                            bg: '#F7F8FA',
+                            surface: '#FFFFFF',
+                            border: '#E5E7EB',
+                            success: '#16A34A',
+                            warning: '#D97706',
+                            danger: '#DC2626'
+                        }
+                    },
+                    fontFamily: {
+                        arabic: ['IBM Plex Sans Arabic', 'sans-serif'],
+                        poppins: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/motion.css">
+    <link rel="stylesheet" href="styles/pages/next-steps.css">
+</head>
+
+<body data-page="next-steps">
+
+    <div class="app-shell">
+
+        <div id="sidebarOverlay" class="sidebar-overlay" aria-hidden="true"></div>
+
+        <div data-component="sidebar"></div>
+
+        <div class="main-area">
+
+            <div data-component="topbar"></div>
+
+            <main class="page-container">
+
+                <section class="hero reveal" style="--i: 0;">
+                    <div class="hero-eyebrow">
+                        <span class="hero-eyebrow-dot"></span>
+                        بعد أن فهمنا الصورة
+                    </div>
+                    <h1 class="hero-title">خطوتك التالية.</h1>
+                    <p class="hero-description">
+                        الهدف ليس أن نملأ وقتك بالمهام.
+                        الهدف أن نختار الخطوات التي تساعدك فعلًا
+                        على التحرك من مكانك الحالي.
+                    </p>
+                </section>
+
+                <section class="reveal" id="primarySection" style="--i: 1;">
+                    <div class="primary-step-label">
+                        <span class="primary-step-dot" aria-hidden="true"></span>
+                        ابدأ بهذه أولًا
+                    </div>
+
+                    <article class="primary-step-card">
+                        <span class="priority-badge">الأولوية الآن</span>
+                        <h2 id="primaryStepTitle" class="primary-step-title"></h2>
+                        <p id="primaryStepReason" class="primary-step-reason"></p>
+
+                        <div class="primary-step-grid">
+                            <div class="primary-step-box">
+                                <p class="primary-step-box-label">لماذا هذه الخطوة؟</p>
+                                <p id="primaryStepWhy" class="primary-step-box-value"></p>
+                            </div>
+
+                            <div class="primary-step-box">
+                                <p class="primary-step-box-label">النتيجة المتوقعة</p>
+                                <p id="primaryStepOutcome" class="primary-step-box-value"></p>
+                            </div>
+                        </div>
+
+                        <div class="primary-step-footer">
+                            <div class="primary-step-meta">
+                                <span class="primary-step-meta-item">
+                                    الجهد:
+                                    <span id="primaryStepEffort" class="primary-step-meta-value"></span>
+                                </span>
+                                <span class="primary-step-meta-divider"></span>
+                                <span class="primary-step-meta-item">
+                                    الوقت:
+                                    <span id="primaryStepTime" class="primary-step-meta-value"></span>
+                                </span>
+                            </div>
+
+                            <button id="primaryActionButton" type="button" class="primary-button" data-cta="primary-action">
+                                <span>عرض التفاصيل</span>
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m13 6 6 6-6 6"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="reveal" id="secondarySection" style="--i: 2;">
+                    <div class="section-heading">
+                        <h2 class="section-title">بعدها</h2>
+                        <span class="section-hint">خطوتان</span>
+                    </div>
+
+                    <div class="secondary-grid">
+                        <article class="secondary-card">
+                            <div class="secondary-card-header">
+                                <div class="secondary-card-number">02</div>
+                                <div>
+                                    <h3 id="secondaryStepOneTitle" class="secondary-card-title"></h3>
+                                    <p id="secondaryStepOneText" class="secondary-card-text"></p>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="secondary-card">
+                            <div class="secondary-card-header">
+                                <div class="secondary-card-number">03</div>
+                                <div>
+                                    <h3 id="secondaryStepTwoTitle" class="secondary-card-title"></h3>
+                                    <p id="secondaryStepTwoText" class="secondary-card-text"></p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="explanation-card reveal" id="explanationSection" style="--i: 3;">
+                    <div class="explanation-icon" aria-hidden="true">?</div>
+                    <div>
+                        <h2 class="explanation-title">لماذا هذه الخطوات؟</h2>
+                        <p id="stepsExplanation" class="explanation-text"></p>
+                    </div>
+                </section>
+
+                <div class="action-area reveal" id="actionArea" style="--i: 4;">
+                    <button id="backButton" type="button" class="secondary-button">
+                        رجوع
+                    </button>
+                    <button id="dashboardButton" type="button" class="ghost-button">
+                        العودة إلى الرئيسية
+                    </button>
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <script src="scripts/core/storage.js"></script>
+    <script src="scripts/core/session.js"></script>
+    <script src="scripts/core/nav-config.js"></script>
+    <script src="scripts/core/components.js"></script>
+    <script src="scripts/core/ui.js"></script>
+    <script src="scripts/core/motion.js"></script>
+    <script src="scripts/pages/next-steps.js"></script>
+    <!-- PWA Script -->
+    <script src="scripts/core/pwa.js"></script>
+</body>
+
+</html>

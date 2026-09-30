@@ -1,0 +1,510 @@
+/* =====================================================
+   NEXT — ANALYSIS PAGE
+   analysis.html
+   ===================================================== */
+
+/* =====================================================
+   POSITION CARD (البطاقة الرئيسية)
+   ===================================================== */
+
+.position-card {
+    position: relative;
+    padding: 36px;
+    margin-bottom: 24px;
+    background: var(--next-surface);
+    border: 1px solid var(--next-border);
+    border-radius: 20px;
+    box-shadow: var(--next-shadow-soft);
+    transition:
+        border-color var(--motion-dur-base) var(--motion-ease-soft),
+        box-shadow var(--motion-dur-base) var(--motion-ease-soft);
+}
+
+.position-card:hover {
+    border-color: #D1D5DB;
+    box-shadow: 0 6px 18px rgba(17, 24, 39, 0.05);
+}
+
+.position-card-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    color: var(--next-blue);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.position-card-label-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--next-blue);
+    animation: softPulse 2400ms var(--motion-ease-soft) infinite;
+}
+
+.position-card-headline {
+    margin: 0 0 16px;
+    color: var(--next-ink);
+    font-size: 26px;
+    line-height: 1.5;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.position-card-summary {
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--next-border);
+    color: var(--next-muted-strong);
+    font-size: 15px;
+    line-height: 2;
+}
+
+/* =====================================================
+   METRICS GRID (3 بطاقات صغيرة)
+   ===================================================== */
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.metric {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+    background: var(--next-surface);
+    border: 1px solid var(--next-border);
+    border-radius: 14px;
+    transition:
+        border-color var(--motion-dur-base) var(--motion-ease-soft),
+        box-shadow var(--motion-dur-base) var(--motion-ease-soft),
+        transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+.metric:hover {
+    border-color: #D1D5DB;
+    box-shadow: 0 6px 16px rgba(17, 24, 39, 0.05);
+    transform: translateY(-2px);
+}
+
+.metric-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+.metric:hover .metric-icon {
+    transform: scale(1.06);
+}
+
+.metric-icon.blue {
+    background: #EFF6FF;
+    color: var(--next-blue);
+}
+
+.metric-icon.amber {
+    background: #FFFBEB;
+    color: var(--next-warning);
+}
+
+.metric-icon.green {
+    background: #F0FDF4;
+    color: var(--next-success);
+}
+
+.metric-body {
+    min-width: 0;
+}
+
+.metric-value {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--next-ink);
+    margin-bottom: 2px;
+    display: inline-block;
+    transition: transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+.metric:hover .metric-value {
+    transform: scale(1.04);
+}
+
+.metric-label {
+    color: var(--next-muted);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* =====================================================
+   ANALYSIS GRID (البطاقات الكبيرة)
+   ===================================================== */
+
+.analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.panel {
+    background: var(--next-surface);
+    border: 1px solid var(--next-border);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--next-shadow-soft);
+    transition:
+        border-color var(--motion-dur-base) var(--motion-ease-soft),
+        box-shadow var(--motion-dur-base) var(--motion-ease-soft);
+}
+
+.panel:hover {
+    border-color: #D1D5DB;
+    box-shadow: 0 6px 18px rgba(17, 24, 39, 0.05);
+}
+
+.panel-wide {
+    grid-column: 1 / -1;
+}
+
+/* Panel Header */
+.panel-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--next-border);
+}
+
+.panel-icon {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    transition: transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+.panel:hover .panel-icon {
+    transform: scale(1.05);
+}
+
+.panel-icon.blue {
+    background: #EFF6FF;
+    color: var(--next-blue);
+}
+
+.panel-icon.amber {
+    background: #FFFBEB;
+    color: var(--next-warning);
+}
+
+.panel-icon.green {
+    background: #F0FDF4;
+    color: var(--next-success);
+}
+
+.panel-header-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.panel-title {
+    margin: 0;
+    color: var(--next-ink);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.panel-subtitle {
+    margin: 2px 0 0;
+    color: var(--next-muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* =====================================================
+   LIST (داخل panels)
+   ===================================================== */
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: #374151;
+    font-size: 14px;
+    line-height: 1.85;
+    transition: transform var(--motion-dur-fast) var(--motion-ease-enter);
+}
+
+.list-item:hover {
+    transform: translateX(-2px);
+}
+
+.list-marker {
+    width: 6px;
+    height: 6px;
+    margin-top: 9px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #D1D5DB;
+    transition: transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+.list-item:hover .list-marker {
+    transform: scale(1.4);
+}
+
+.list-marker.blue {
+    background: var(--next-blue);
+}
+
+.list-marker.amber {
+    background: var(--next-warning);
+}
+
+.list-marker.green {
+    background: var(--next-success);
+}
+
+.list-empty {
+    color: #9CA3AF;
+    font-size: 13px;
+    font-style: italic;
+    padding: 8px 0;
+}
+
+/* =====================================================
+   CONTROL GRID (داخل panel-wide)
+   ===================================================== */
+
+.control-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.control-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: #FAFAFA;
+    border: 1px solid var(--next-border);
+    border-radius: 12px;
+    transition:
+        background-color var(--motion-dur-base) var(--motion-ease-soft),
+        border-color var(--motion-dur-base) var(--motion-ease-soft),
+        transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+.control-item:hover {
+    background: #F5F5F5;
+    border-color: #D1D5DB;
+    transform: translateY(-1px);
+}
+
+.control-item-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F0FDF4;
+    color: var(--next-success);
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    transition: transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+.control-item:hover .control-item-icon {
+    transform: scale(1.1);
+}
+
+.control-item-content {
+    min-width: 0;
+}
+
+.control-item-title {
+    margin: 0;
+    color: var(--next-ink);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.control-item-text {
+    margin: 3px 0 0;
+    color: var(--next-muted);
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* =====================================================
+   NOTE
+   ===================================================== */
+
+.note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 20px;
+    background: #FAFAFA;
+    border-radius: 12px;
+    margin-bottom: 32px;
+}
+
+.note-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--next-surface);
+    border: 1px solid var(--next-border);
+    border-radius: 50%;
+    color: var(--next-muted);
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.note-text {
+    margin: 0;
+    color: var(--next-muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* =====================================================
+   NEXT ACTION (بطاقة الانتقال)
+   ===================================================== */
+
+.next-action {
+    padding: 28px 32px;
+    background: var(--next-surface);
+    border: 1px solid var(--next-border);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    transition:
+        border-color var(--motion-dur-base) var(--motion-ease-soft),
+        box-shadow var(--motion-dur-base) var(--motion-ease-soft);
+}
+
+.next-action:hover {
+    border-color: #D1D5DB;
+    box-shadow: 0 6px 18px rgba(17, 24, 39, 0.05);
+}
+
+.next-action-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.next-action-label {
+    color: var(--next-blue);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+}
+
+.next-action-title {
+    color: var(--next-ink);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.next-action-text {
+    margin-top: 4px;
+    color: var(--next-muted);
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 900px) {
+    .analysis-grid,
+    .control-grid,
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .position-card {
+        padding: 24px;
+    }
+
+    .position-card-headline {
+        font-size: 22px;
+    }
+
+    .position-card-summary {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .panel {
+        padding: 20px;
+    }
+
+    .metric {
+        padding: 16px 18px;
+    }
+
+    .metric-value {
+        font-size: 20px;
+    }
+
+    .next-action {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .next-action .primary-button {
+        width: 100%;
+    }
+}
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .position-card-label-dot {
+        animation: none;
+    }
+}

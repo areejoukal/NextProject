@@ -1,0 +1,420 @@
+/* =====================================================
+   NEXT — SETTINGS PAGE
+   settings.html
+   ===================================================== */
+
+/* =====================================================
+   CARD (البطاقات)
+   ===================================================== */
+
+.card {
+    background: var(--next-surface);
+    border: 1px solid var(--next-border);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: var(--next-shadow-soft);
+    transition:
+        border-color var(--motion-dur-base) var(--motion-ease-soft),
+        box-shadow var(--motion-dur-base) var(--motion-ease-soft);
+}
+
+.card:hover {
+    border-color: #D1D5DB;
+    box-shadow: 0 8px 22px rgba(17, 24, 39, 0.06);
+}
+
+.card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--next-border);
+}
+
+.card-title {
+    margin: 0 0 5px;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--next-ink);
+}
+
+.card-description {
+    margin: 0;
+    color: var(--next-muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* =====================================================
+   PROFILE SUMMARY (الصورة + الاسم + البريد)
+   ===================================================== */
+
+.goal-box {
+    padding: 18px;
+    background: var(--next-bg);
+    border-radius: 12px;
+}
+
+.user-avatar {
+    border-radius: 50%;
+    background: #EFF6FF;
+    color: var(--next-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+    transition:
+        transform var(--motion-dur-base) var(--motion-ease-enter),
+        box-shadow var(--motion-dur-base) var(--motion-ease-soft);
+}
+
+.goal-box:hover .user-avatar {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.08);
+}
+
+/* =====================================================
+   FORM (نموذج المعلومات)
+   ===================================================== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 4px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--next-ink);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.form-input {
+    width: 100%;
+    height: 48px;
+    padding: 0 14px;
+    border: 1px solid var(--next-border);
+    border-radius: 10px;
+    outline: none;
+    background: var(--next-surface);
+    color: var(--next-ink);
+    font-size: 14px;
+    font-family: inherit;
+    transition:
+        border-color var(--motion-dur-fast) var(--motion-ease-soft),
+        box-shadow var(--motion-dur-fast) var(--motion-ease-soft);
+}
+
+.form-input:focus {
+    border-color: var(--next-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.form-input::placeholder {
+    color: #9CA3AF;
+}
+
+.form-input:disabled {
+    background: #F9FAFB;
+    color: var(--next-muted);
+    cursor: not-allowed;
+}
+
+/* =====================================================
+   ACTION AREA (أزرار الحفظ/الإلغاء)
+   ===================================================== */
+
+.action-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #F0F1F3;
+}
+
+/* =====================================================
+   TOGGLE (مفتاح التشغيل)
+   ===================================================== */
+
+.toggle {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    border: 0;
+    border-radius: 999px;
+    background: #D1D5DB;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background-color var(--motion-dur-base) var(--motion-ease-soft);
+}
+
+.toggle::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    box-shadow: 0 1px 2px rgba(17, 24, 39, 0.12);
+    transition: transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+.toggle[aria-checked="true"] {
+    background: var(--next-blue);
+}
+
+.toggle[aria-checked="true"]::after {
+    transform: translateX(-20px);
+}
+
+.toggle:hover {
+    background: #B8BDC4;
+}
+
+.toggle[aria-checked="true"]:hover {
+    background: var(--next-dark-blue);
+}
+
+/* =====================================================
+   PREFERENCE ROWS (صفوف التفضيلات)
+   ===================================================== */
+
+.step-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* =====================================================
+   DANGER ZONE (إدارة الحساب)
+   ===================================================== */
+
+.card[style*="border-color: #FECACA"] {
+    border-color: #FECACA;
+}
+
+.card[style*="border-color: #FECACA"]:hover {
+    border-color: #FCA5A5;
+    box-shadow: 0 8px 22px rgba(220, 38, 38, 0.06);
+}
+
+/* =====================================================
+   DANGER BUTTONS (تسجيل الخروج + حذف)
+   ===================================================== */
+
+.card .secondary-button[style*="color: var(--next-danger)"] {
+    transition:
+        background-color var(--motion-dur-fast) var(--motion-ease-soft),
+        border-color var(--motion-dur-fast) var(--motion-ease-soft),
+        color var(--motion-dur-fast) var(--motion-ease-soft),
+        transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+.card .secondary-button[style*="color: var(--next-danger)"]:hover {
+    background: #FEF2F2;
+    border-color: #FCA5A5;
+    transform: translateY(-1px);
+}
+
+/* =====================================================
+   PRIMARY BUTTON (محلي - للحفظ)
+   ===================================================== */
+
+.primary-button {
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 22px;
+    border: 1px solid var(--next-blue);
+    border-radius: 10px;
+    background: var(--next-blue);
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+        background-color var(--motion-dur-fast) var(--motion-ease-soft),
+        border-color var(--motion-dur-fast) var(--motion-ease-soft),
+        transform var(--motion-dur-base) var(--motion-ease-enter),
+        box-shadow var(--motion-dur-base) var(--motion-ease-soft),
+        opacity var(--motion-dur-fast) var(--motion-ease-soft);
+}
+
+.primary-button:hover:not(:disabled) {
+    background: var(--next-dark-blue);
+    border-color: var(--next-dark-blue);
+    transform: translateY(-1.5px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.22);
+}
+
+.primary-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.primary-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* =====================================================
+   SECONDARY BUTTON (محلي)
+   ===================================================== */
+
+.secondary-button {
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 18px;
+    border: 1px solid var(--next-border);
+    border-radius: 10px;
+    background: var(--next-surface);
+    color: var(--next-ink);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+        background-color var(--motion-dur-fast) var(--motion-ease-soft),
+        border-color var(--motion-dur-fast) var(--motion-ease-soft),
+        transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+.secondary-button:hover {
+    background: #F9FAFB;
+    border-color: #D1D5DB;
+}
+
+.secondary-button:active {
+    transform: translateY(0);
+}
+
+/* =====================================================
+   TOAST
+   ===================================================== */
+
+body > .toast {
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    z-index: 100;
+    min-width: 260px;
+    max-width: 360px;
+    padding: 14px 18px;
+    background: var(--next-ink);
+    color: #FFFFFF;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+    box-shadow: var(--next-shadow-large);
+    opacity: 0;
+    transform: translateY(var(--motion-distance-sm));
+    pointer-events: none;
+    transition:
+        opacity var(--motion-dur-base) var(--motion-ease-soft),
+        transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+body > .toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 900px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .card {
+        padding: 22px 20px;
+    }
+
+    .card-header {
+        margin-bottom: 18px;
+        padding-bottom: 16px;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    /* زر الحفظ والإلغاء */
+    .action-area {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .action-area .primary-button,
+    .action-area .secondary-button {
+        width: 100%;
+    }
+
+    /* صفوف التفضيلات: نص فوق، toggle تحت أو يسار */
+    .step-meta > div[style*="display: flex"][style*="align-items: center"] {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 12px;
+    }
+
+    .step-meta .toggle {
+        align-self: flex-start;
+    }
+
+    /* Danger rows */
+    .card > div[style*="display: flex"][style*="flex-direction: column"] > div {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 12px;
+    }
+
+    .card > div[style*="flex-direction: column"] .secondary-button {
+        width: 100%;
+    }
+
+    body > .toast {
+        left: 16px;
+        right: 16px;
+        min-width: 0;
+        max-width: none;
+    }
+}
+
+/* =====================================================
+   REDUCED MOTION
+   ====================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .toggle::after,
+    .goal-box:hover .user-avatar {
+        transition: none;
+        transform: none;
+    }
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>الإعدادات — NEXT</title>
+    <meta name="description" content="صفحة الإعدادات في NEXT — عدّل معلومات حسابك، وتفضيلاتك، وأدر حسابك بالطريقة التي تناسبك.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://next.app/settings.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEXT">
+    <meta property="og:locale" content="ar_AR">
+    <meta property="og:title" content="الإعدادات — NEXT">
+    <meta property="og:description" content="عدّل معلومات حسابك، وتفضيلاتك، وأدر حسابك بالطريقة التي تناسبك.">
+    <meta property="og:url" content="https://next.app/settings.html">
+    <meta property="og:image" content="https://next.app/icons/og-settings.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEXT — الإعدادات">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="الإعدادات — NEXT">
+    <meta name="twitter:description" content="عدّل معلومات حسابك، وتفضيلاتك، وأدر حسابك.">
+    <meta name="twitter:image" content="https://next.app/icons/og-settings.png">
+    <meta name="twitter:image:alt" content="NEXT — الإعدادات">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#F7F8FA">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        next: {
+                            blue: '#2563EB',
+                            blueDark: '#1D4ED8',
+                            ink: '#111827',
+                            muted: '#6B7280',
+                            mutedStrong: '#4B5563',
+                            bg: '#F7F8FA',
+                            surface: '#FFFFFF',
+                            border: '#E5E7EB',
+                            success: '#16A34A',
+                            warning: '#D97706',
+                            danger: '#DC2626'
+                        }
+                    },
+                    fontFamily: {
+                        arabic: ['IBM Plex Sans Arabic', 'sans-serif'],
+                        poppins: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/motion.css">
+    <link rel="stylesheet" href="styles/pages/settings.css">
+</head>
+
+<body data-page="settings">
+
+    <div class="app-shell">
+
+        <div id="sidebarOverlay" class="sidebar-overlay" aria-hidden="true"></div>
+
+        <div data-component="sidebar"></div>
+
+        <div class="main-area">
+
+            <div data-component="topbar"></div>
+
+            <main class="page-container">
+
+                <header class="page-header reveal" style="--i: 0;">
+                    <div class="page-kicker">
+                        <span class="page-kicker-dot" aria-hidden="true"></span>
+                        حسابك في NEXT
+                    </div>
+                    <h1 class="page-title">الإعدادات</h1>
+                    <p class="page-description">
+                        عدّل بيانات حسابك وتفضيلاتك بالطريقة التي تناسبك.
+                    </p>
+                </header>
+
+                <section class="card reveal" style="--i: 1;">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">معلومات الحساب</h2>
+                            <p class="card-description">هذه المعلومات مرتبطة بحسابك في NEXT.</p>
+                        </div>
+                    </div>
+
+                    <div class="goal-box" style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                        <div id="profileAvatar" class="user-avatar" style="width: 64px; height: 64px; font-size: 22px;">أ</div>
+                        <div>
+                            <div id="profileName" style="font-size: 16px; font-weight: 600; color: var(--next-ink);">حسابي</div>
+                            <div id="profileEmail" style="margin-top: 3px; color: var(--next-muted); font-family: 'Poppins', sans-serif; font-size: 12px; direction: ltr;">account@example.com</div>
+                        </div>
+                    </div>
+
+                    <form id="profileForm">
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label class="form-label" for="fullName">الاسم</label>
+                                <input id="fullName" name="name" type="text" class="form-input" placeholder="اكتب اسمك" autocomplete="name">
+                            </div>
+
+                            <div class="form-field">
+                                <label class="form-label" for="email">البريد الإلكتروني</label>
+                                <input id="email" name="email" type="email" class="form-input" placeholder="name@example.com" autocomplete="email">
+                            </div>
+                        </div>
+
+                        <div class="action-area" style="justify-content: flex-start;">
+                            <button type="submit" id="saveProfileButton" class="primary-button" data-cta="save-profile" disabled>
+                                حفظ التغييرات
+                            </button>
+                            <button type="button" id="cancelProfile" class="secondary-button">
+                                إلغاء
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="card reveal" style="--i: 2;">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title">التفضيلات</h2>
+                            <p class="card-description">تحكم في الطريقة التي يتفاعل بها NEXT معك.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-meta" style="flex-direction: column; gap: 16px; align-items: stretch;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 16px; border-bottom: 1px solid #F0F1F3;">
+                            <div>
+                                <div style="font-size: 14px; font-weight: 500; color: var(--next-ink);">تذكيرات الخطوات</div>
+                                <div style="margin-top: 3px; color: var(--next-muted); font-size: 12px;">استقبل تذكيرًا عندما تكون لديك خطوة تحتاج إلى متابعة.</div>
+                            </div>
+                            <button type="button" class="toggle" role="switch" aria-checked="true" data-setting="step_reminders" aria-label="تذكيرات الخطوات"></button>
+                        </div>
+
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 16px; border-bottom: 1px solid #F0F1F3;">
+                            <div>
+                                <div style="font-size: 14px; font-weight: 500; color: var(--next-ink);">تذكير بإعادة التقييم</div>
+                                <div style="margin-top: 3px; color: var(--next-muted); font-size: 12px;">تنبيه عندما يكون من المناسب مراجعة وضعك من جديد.</div>
+                            </div>
+                            <button type="button" class="toggle" role="switch" aria-checked="true" data-setting="reassessment_reminders" aria-label="تذكير بإعادة التقييم"></button>
+                        </div>
+
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <div>
+                                <div style="font-size: 14px; font-weight: 500; color: var(--next-ink);">ملخص التغيّرات</div>
+                                <div style="margin-top: 3px; color: var(--next-muted); font-size: 12px;">اعرف ما الذي تغيّر في وضعك وخطتك.</div>
+                            </div>
+                            <button type="button" class="toggle" role="switch" aria-checked="true" data-setting="change_summary" aria-label="ملخص التغيّرات"></button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card reveal" style="--i: 3; border-color: #FECACA;">
+                    <div class="card-header">
+                        <div>
+                            <h2 class="card-title" style="color: #B91C1C;">إدارة الحساب</h2>
+                            <p class="card-description">الإجراءات التالية تؤثر على حسابك بشكل مباشر.</p>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 16px; border-bottom: 1px solid #FEE2E2;">
+                            <div>
+                                <div style="font-size: 14px; font-weight: 500; color: var(--next-ink);">تسجيل الخروج</div>
+                                <div style="margin-top: 3px; color: var(--next-muted); font-size: 12px;">الخروج من حساب NEXT على هذا الجهاز.</div>
+                            </div>
+                            <button type="button" id="logoutButton" class="secondary-button" data-cta="logout" style="color: var(--next-danger); border-color: #FECACA;">
+                                تسجيل الخروج
+                            </button>
+                        </div>
+
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <div>
+                                <div style="font-size: 14px; font-weight: 500; color: #B91C1C;">حذف الحساب</div>
+                                <div style="margin-top: 3px; color: var(--next-muted); font-size: 12px;">حذف الحساب وبياناته إجراء دائم لا يمكن التراجع عنه.</div>
+                            </div>
+                            <button type="button" id="deleteAccountButton" class="secondary-button" data-cta="delete-account" style="color: var(--next-danger); border-color: #FECACA;">
+                                حذف الحساب
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="scripts/core/storage.js"></script>
+    <script src="scripts/core/session.js"></script>
+    <script src="scripts/core/nav-config.js"></script>
+    <script src="scripts/core/components.js"></script>
+    <script src="scripts/core/ui.js"></script>
+    <script src="scripts/core/motion.js"></script>
+    <script src="scripts/pages/settings.js"></script>
+    <!-- PWA Script -->
+    <script src="scripts/core/pwa.js"></script>
+
+</body>
+
+</html>

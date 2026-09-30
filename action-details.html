@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>تفاصيل الخطوة — NEXT</title>
+    <meta name="description" content="صفحة تفاصيل الخطوة في NEXT — راجع خطوتك الواحدة، خطوات التنفيذ، معيار الإنجاز، والملاحظات المرتبطة بها.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://next.app/action-details.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEXT">
+    <meta property="og:locale" content="ar_AR">
+    <meta property="og:title" content="تفاصيل الخطوة — NEXT">
+    <meta property="og:description" content="راجع خطوتك الواحدة في NEXT: لماذا هذه الخطوة، كيف تنفذها، وكيف تعرف أنك أنجزتها.">
+    <meta property="og:url" content="https://next.app/action-details.html">
+    <meta property="og:image" content="https://next.app/icons/og-action-details.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEXT — تفاصيل الخطوة">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="تفاصيل الخطوة — NEXT">
+    <meta name="twitter:description" content="راجع خطوتك الواحدة: لماذا، كيف، وكيف تعرف أنك أنجزتها.">
+    <meta name="twitter:image" content="https://next.app/icons/og-action-details.png">
+    <meta name="twitter:image:alt" content="NEXT — تفاصيل الخطوة">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#F7F8FA">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-72.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NEXT">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="NEXT">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/motion.css">
+    <link rel="stylesheet" href="styles/pages/action-details.css">
+</head>
+
+<body data-page="action-details">
+
+    <!-- Ambient Background -->
+    <div class="ambient-bg" aria-hidden="true">
+        <div class="ambient-blob ambient-blob-1"></div>
+        <div class="ambient-blob ambient-blob-2"></div>
+    </div>
+
+
+    <div class="onboarding-shell">
+
+        <!-- TOPBAR -->
+        <header class="onboarding-topbar">
+            <div class="onboarding-topbar-inner">
+
+                <a href="index.html" class="onboarding-brand" aria-label="NEXT">
+                    <span class="onboarding-brand-mark">
+                        <span class="brand-mark-bar brand-mark-bar-1"></span>
+                        <span class="brand-mark-bar brand-mark-bar-2"></span>
+                        <span class="brand-mark-bar brand-mark-bar-3"></span>
+                        <span class="brand-mark-corner"></span>
+                    </span>
+                    <span class="onboarding-brand-name">NEXT</span>
+                </a>
+
+                <div class="onboarding-progress" aria-label="تقدم الرحلة">
+                    <span class="onboarding-progress-step completed"></span>
+                    <span class="onboarding-progress-step completed"></span>
+                    <span class="onboarding-progress-step completed"></span>
+                    <span class="onboarding-progress-step completed"></span>
+                    <span class="onboarding-progress-step active"></span>
+                </div>
+
+                <a href="next-steps.html" class="onboarding-back">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                    رجوع
+                </a>
+
+            </div>
+        </header>
+
+
+        <!-- MAIN -->
+        <main class="onboarding-main">
+
+            <!-- HERO -->
+            <header class="onboarding-header">
+                <div class="onboarding-eyebrow" data-anim="eyebrow">
+                    <span class="onboarding-eyebrow-dot" aria-hidden="true"></span>
+                    <span>خطوتك الواحدة</span>
+                </div>
+
+                <h1 id="actionTitle" class="onboarding-title" data-anim="title"></h1>
+
+                <p id="actionReason" class="onboarding-description" data-anim="description"></p>
+            </header>
+
+
+            <!-- WHY SECTION -->
+            <section class="content-block" style="--i: 0;">
+                <div class="content-block-header">
+                    <div class="content-block-icon content-block-icon-blue" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <path d="M12 8v4"></path>
+                            <path d="M12 16h.01"></path>
+                        </svg>
+                    </div>
+                    <h2 class="content-block-title">لماذا هذه الخطوة؟</h2>
+                </div>
+                <p id="actionWhy" class="content-block-text"></p>
+            </section>
+
+
+            <!-- WHAT TO DO -->
+            <section class="content-block" style="--i: 1;">
+                <div class="content-block-header">
+                    <div class="content-block-icon content-block-icon-blue" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 11 12 14 22 4"></path>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="content-block-title">ما الذي ستفعله؟</h2>
+                        <p class="content-block-subtitle">خطوات محددة توصلك إلى نتيجة واضحة.</p>
+                    </div>
+                </div>
+
+                <div id="actionList" class="action-list"></div>
+            </section>
+
+
+            <!-- COMPLETION CRITERIA -->
+            <section class="content-block" style="--i: 2;">
+                <div class="content-block-header">
+                    <div class="content-block-icon content-block-icon-green" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 6 9 17l-5-5"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="content-block-title">كيف تعرف أنك أنجزتها؟</h2>
+                        <p class="content-block-subtitle">علامة واضحة تخبرك أن الخطوة اكتملت.</p>
+                    </div>
+                </div>
+
+                <div class="criteria-box">
+                    <p id="completionCriteria" class="criteria-text"></p>
+                </div>
+            </section>
+
+
+            <!-- META GRID -->
+            <section class="meta-grid" style="--i: 3;">
+                <div class="meta-card">
+                    <div class="meta-icon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="9"></circle>
+                            <path d="M12 7v5l3 2"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-content">
+                        <p class="meta-label">الوقت المقترح</p>
+                        <p id="estimatedTime" class="meta-value"></p>
+                    </div>
+                </div>
+
+                <div class="meta-card">
+                    <div class="meta-icon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 12h4l3-8 4 16 3-8h4"></path>
+                        </svg>
+                    </div>
+                    <div class="meta-content">
+                        <p class="meta-label">مستوى الجهد</p>
+                        <p id="effortLevel" class="meta-value"></p>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- NOTE SECTION -->
+            <section class="content-block" style="--i: 4;">
+                <div class="content-block-header">
+                    <div class="content-block-icon content-block-icon-amber" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 20h9"></path>
+                            <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="content-block-title">
+                            ملاحظة لنفسك
+                            <!-- <span class="content-block-optional">(اختياري)</span> -->
+                        </h2>
+                        <p class="content-block-subtitle">
+                            إذا كان هناك شيء تريد تذكّره أثناء التنفيذ، اكتبه هنا.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="note-wrapper">
+                    <textarea
+                        id="actionNote"
+                        class="note-textarea"
+                        maxlength="500"
+                        placeholder="اكتب ملاحظتك هنا..."
+                    ></textarea>
+                    <span id="noteCounter" class="note-counter">0 / 500</span>
+                </div>
+            </section>
+
+
+            <!-- COMPLETION BOX -->
+            <section id="completionSection" class="completion-box" style="--i: 5;">
+                <div id="completionIcon" class="completion-icon" aria-hidden="true">
+                    <svg id="completionSvg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9"></circle>
+                    </svg>
+                </div>
+
+                <div class="completion-content">
+                    <h2 id="completionTitle" class="completion-title">هل أنجزت الخطوة؟</h2>
+                    <p id="completionText" class="completion-text">
+                        علّم عليها كمكتملة عند الانتهاء. هذا يساعد NEXT على فهم تقدمك وتحديد الخطوات القادمة.
+                    </p>
+                </div>
+            </section>
+
+
+            <!-- ACTIONS -->
+            <div class="onboarding-actions" style="--i: 6;">
+                <button id="backButton" type="button" class="secondary-button">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                    رجوع
+                </button>
+
+                <div class="action-buttons-group">
+                    <button id="completeButton" type="button" class="primary-button primary-button-large" data-cta="complete-step">
+                        <span class="button-shine" aria-hidden="true"></span>
+                        <span id="completeButtonLabel">أنجزت الخطوة</span>
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m13 6 6 6-6 6"></path>
+                        </svg>
+                    </button>
+
+                    <a id="progressButton" href="progress.html" class="primary-button primary-button-large progress-button" style="display: none;" data-cta="view-progress">
+                        <span>عرض تقدمي</span>
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m13 6 6 6-6 6"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="onboarding-footer">
+            © 2026 NEXT — افهم أولًا. تحرّك ثانيًا.
+        </footer>
+
+    </div>
+
+
+    <!-- TOAST -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+
+    <!-- SCRIPTS -->
+    <script src="scripts/core/storage.js"></script>
+    <script src="scripts/core/session.js"></script>
+    <script src="scripts/core/ui.js"></script>
+    <script src="scripts/core/motion.js"></script>
+    <script src="scripts/pages/action-details.js"></script>
+    <!-- PWA Script -->
+    <script src="scripts/core/pwa.js"></script>
+
+</body>
+
+</html>

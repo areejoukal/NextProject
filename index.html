@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>NEXT — افهم وضعك الحقيقي واعرف خطوتك التالية</title>
+    <meta name="description" content="NEXT منصة عربية بتقييم تكيفي يساعدك على فهم وضعك الحقيقي، ومعرفة ما ينقصك، وتحديد خطوتك التالية. بدون وعود وهمية أو تخمين.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://next.app/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEXT">
+    <meta property="og:locale" content="ar_AR">
+    <meta property="og:title" content="NEXT — افهم وضعك الحقيقي واعرف خطوتك التالية">
+    <meta property="og:description" content="منصة عربية بتقييم تكيفي يساعدك على فهم وضعك، وتحديد خطوتك التالية. بدون وعود وهمية.">
+    <meta property="og:url" content="https://next.app/">
+    <meta property="og:image" content="https://next.app/icons/og-home.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEXT — افهم أولًا. تحرّك ثانيًا.">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NEXT — افهم وضعك الحقيقي واعرف خطوتك التالية">
+    <meta name="twitter:description" content="منصة عربية بتقييم تكيفي يساعدك على فهم وضعك، وتحديد خطوتك التالية.">
+    <meta name="twitter:image" content="https://next.app/icons/og-home.png">
+    <meta name="twitter:image:alt" content="NEXT — افهم أولًا. تحرّك ثانيًا.">
+    <meta name="twitter:site" content="@nextapp">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://next.app/#organization",
+          "name": "NEXT",
+          "url": "https://next.app/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://next.app/icons/icon-192.png",
+            "width": 192,
+            "height": 192
+          },
+          "description": "منصة عربية تساعد المستخدم على فهم وضعه الحقيقي واتخاذ خطوة واضحة نحو هدفه.",
+          "slogan": "افهم أولًا. تحرّك ثانيًا.",
+          "areaServed": { "@type": "Place", "name": "العالم العربي" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://next.app/#website",
+          "url": "https://next.app/",
+          "name": "NEXT",
+          "inLanguage": "ar",
+          "publisher": { "@id": "https://next.app/#organization" }
+        },
+        {
+          "@type": "WebApplication",
+          "@id": "https://next.app/#webapp",
+          "name": "NEXT",
+          "url": "https://next.app/",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web (PWA)",
+          "inLanguage": "ar",
+          "description": "منصة عربية بتقييم تكيفي يساعدك على فهم وضعك الحقيقي، ومعرفة ما ينقصك، وتحديد خطوتك التالية.",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+          "featureList": [
+            "تقييم تكيفي من 8 أسئلة كحد أقصى",
+            "فهم الوضع الحالي",
+            "تحديد ما يمكنك التأثير فيه",
+            "خطوة واحدة واضحة بدل قائمة مهام",
+            "إعادة التقييم عند تغير الظروف"
+          ],
+          "publisher": { "@id": "https://next.app/#organization" }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#F7F8FA">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-72.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NEXT">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="NEXT">
+    <link rel="stylesheet" href="styles/core/pwa.css">
+
+    <!-- TAILWIND -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        arabic: ["IBM Plex Sans Arabic", "sans-serif"],
+                        poppins: ["Poppins", "sans-serif"],
+                    },
+                    colors: {
+                        next: {
+                            blue: "#2563EB",
+                            darkBlue: "#1D4ED8",
+                            ink: "#111827",
+                            muted: "#6B7280",
+                            bg: "#F7F8FA",
+                            surface: "#FFFFFF",
+                            border: "#E5E7EB",
+                            success: "#16A34A",
+                            warning: "#D97706",
+                            danger: "#DC2626",
+                        },
+                    },
+                },
+            },
+        };
+    </script>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/motion.css">
+    <link rel="stylesheet" href="styles/decorative.css">
+    <link rel="stylesheet" href="styles/pages/landing.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+        <div class="next-container">
+            <nav class="navbar" aria-label="التنقل الرئيسي">
+
+                <a href="#top" class="brand" aria-label="NEXT - الصفحة الرئيسية">
+                    <span class="brand-symbol" aria-hidden="true">
+                        <span class="brand-diagonal"></span>
+                        <span class="brand-corner"></span>
+                    </span>
+                    <span class="brand-name">NEXT</span>
+                </a>
+
+                <div class="desktop-nav">
+                    <a href="#how-it-works" class="nav-link">كيف يعمل؟</a>
+                    <a href="#why-next" class="nav-link">لماذا NEXT؟</a>
+                    <a href="#who-is-it-for" class="nav-link">لمن NEXT؟</a>
+                </div>
+
+                <div class="nav-actions">
+                    <a href="login.html" class="btn btn-secondary">تسجيل الدخول</a>
+                    <a href="register.html" class="btn btn-primary" data-cta="start" data-source="landing_nav">
+                        ابدأ الآن
+                    </a>
+                </div>
+
+                <button class="mobile-menu-button" id="mobileMenuButton" type="button"
+                        aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobileMenu">
+                    <svg id="menuIcon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                        <path d="M4 7h16"></path>
+                        <path d="M4 12h16"></path>
+                        <path d="M4 17h16"></path>
+                    </svg>
+                </button>
+
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <div class="mobile-menu-links">
+                <a href="#how-it-works" class="mobile-menu-link">كيف يعمل؟</a>
+                <a href="#why-next" class="mobile-menu-link">لماذا NEXT؟</a>
+                <a href="#who-is-it-for" class="mobile-menu-link">لمن NEXT؟</a>
+            </div>
+
+            <div class="mobile-menu-actions">
+                <a href="login.html" class="btn btn-secondary">تسجيل الدخول</a>
+                <a href="register.html" class="btn btn-primary" data-cta="start" data-source="landing_mobile">
+                    ابدأ الآن
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <main id="top">
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="next-container">
+                <div class="hero-grid">
+
+                    <div class="hero-content">
+                        <div class="eyebrow">
+                            <span class="eyebrow-dot" aria-hidden="true"></span>
+                            تقييم تكيفي — بدون تخمين
+                        </div>
+
+                        <h1 class="hero-title">
+                            اعرف أين أنت،
+                            <br>
+                            واعرف
+                            <span>ما الذي يمنعك من التحرك.</span>
+                        </h1>
+
+                        <p class="hero-description">
+                            كثير من الأهداف لا تتعطل بسبب النية نفسها،
+                            بل لأننا لا نعرف هل نحن على الطريق الصحيح،
+                            وما الذي نستطيع التحكم فيه، وما الذي يجب إصلاحه أولًا.
+                            <br><br>
+                            <strong class="text-next-ink">NEXT</strong>
+                            لا يطلب منك الإجابة عن كل شيء دفعة واحدة.
+                            هو يلتقط صورتك الحالية، ويوضح ما هو واضح وما هو غير واضح،
+                            ثم يختار الخطوة التالية بناءً على الواقع، لا على التخمين.
+                        </p>
+
+                        <div class="hero-actions">
+                            <a href="register.html" class="btn btn-primary" data-cta="start" data-source="landing_hero">
+                                ابدأ مع NEXT
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m13 6 6 6-6 6"></path>
+                                </svg>
+                            </a>
+
+                            <a href="#how-it-works" class="btn btn-secondary">كيف يعمل؟</a>
+                        </div>
+
+                        <div class="hero-trust">
+                            <span class="hero-trust-icon" aria-hidden="true">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    <path d="m9 12 2 2 4-4"></path>
+                                </svg>
+                            </span>
+                            أسئلة تتكيف مع وضعك — بدون تخمينات أو وعود وهمية.
+                        </div>
+                    </div>
+
+                    <!-- Product Preview -->
+                    <div class="hero-preview">
+                        <div class="preview-shell">
+
+                            <div class="preview-topbar">
+                                <div class="preview-profile">
+                                    <span class="preview-profile-line"></span>
+                                    <span class="preview-avatar"></span>
+                                </div>
+                            </div>
+
+                            <div class="preview-body">
+
+                                <aside class="preview-sidebar">
+                                    <div class="preview-sidebar-logo">
+                                        <span class="preview-sidebar-logo-mark"></span>
+                                        <span class="preview-sidebar-logo-line"></span>
+                                    </div>
+
+                                    <div class="preview-sidebar-item active">
+                                        <span class="preview-sidebar-text">موقعك الحالي</span>
+                                    </div>
+                                    <div class="preview-sidebar-item">
+                                        <span class="preview-sidebar-text">ما يمكنك التأثير فيه</span>
+                                    </div>
+                                    <div class="preview-sidebar-item">
+                                        <span class="preview-sidebar-text">الخطوات التالية</span>
+                                    </div>
+                                    <div class="preview-sidebar-item">
+                                        <span class="preview-sidebar-text">التقدّم</span>
+                                    </div>
+                                </aside>
+
+                                <div class="preview-main">
+                                    <div class="preview-heading-line"></div>
+
+                                    <div class="preview-position-card">
+                                        <div class="preview-card-label">
+                                            <span class="preview-status"></span>
+                                            موقعك الحالي
+                                        </div>
+                                        <div class="preview-card-title"></div>
+                                        <div class="preview-card-lines">
+                                            <span class="preview-line"></span>
+                                            <span class="preview-line"></span>
+                                            <span class="preview-line"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PROBLEM -->
+        <section class="section section-border" id="why-next">
+            <div class="next-container">
+
+                <div class="section-heading reveal reveal--fade">
+                    <div class="section-label">المشكلة</div>
+                    <h2 class="section-title">
+                        مشكلتك ليست دائمًا أنك لا تعرف ما الذي تفعله.
+                    </h2>
+                    <p class="section-description">
+                        أحيانًا أنت أصلًا تفعل الكثير.
+                        تتعلم، وتتقدم، وتبني مشاريع، وتبحث عن فرص،
+                        وتحاول أن تتطور...
+                        <br>
+                        <strong class="text-next-ink">
+                            لكن السؤال الحقيقي يبقى:
+                            هل أنا أصلًا أسير في الاتجاه الصحيح؟
+                        </strong>
+                    </p>
+                </div>
+
+                <div class="problem-grid stagger">
+                    <article class="problem-card">
+                        <span class="problem-number">01</span>
+                        <h3>أين أنا؟</h3>
+                        <p>لدي إنجازات ومهارات، لكنني لا أعرف كيف أرى الصورة كاملة.</p>
+                    </article>
+
+                    <article class="problem-card">
+                        <span class="problem-number">02</span>
+                        <h3>ما الذي ينقصني؟</h3>
+                        <p>هل لدي فعلًا فجوة؟ أم أنني لا أعرف ما هو المطلوب؟</p>
+                    </article>
+
+                    <article class="problem-card">
+                        <span class="problem-number">03</span>
+                        <h3>ما الذي أستطيع تغييره؟</h3>
+                        <p>هناك أمور يمكنني تطويرها، وأمور لا أستطيع التحكم فيها.</p>
+                    </article>
+
+                    <article class="problem-card">
+                        <span class="problem-number">04</span>
+                        <h3>ما الأهم الآن؟</h3>
+                        <p>لأن محاولة تحسين كل شيء في الوقت نفسه قد تمنعني من التقدم في أي شيء.</p>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- HOW IT WORKS -->
+        <section class="section section-border" id="how-it-works">
+            <div class="next-container">
+
+                <div class="section-heading reveal reveal--fade">
+                    <div class="section-label">كيف يعمل NEXT؟</div>
+                    <h2 class="section-title">
+                        بدل أن نبدأ بـ "ما الذي يجب أن تفعله؟"
+                    </h2>
+                    <p class="section-description">
+                        <strong class="text-next-ink">
+                            نبدأ بـ "لنفهم وضعك أولًا."
+                        </strong>
+                    </p>
+                </div>
+
+                <div class="steps stagger">
+                    <article class="step">
+                        <div class="step-number">01</div>
+                        <h3>أخبرنا عن هدفك</h3>
+                        <p>ما الذي تحاول الوصول إليه؟ لا يلزم أن تكون لديك خطة كاملة. يكفي أن تعرف الاتجاه الذي تريد السير فيه.</p>
+                    </article>
+
+                    <article class="step">
+                        <div class="step-number">02</div>
+                        <h3>لنفهم وضعك</h3>
+                        <p>NEXT يسألك عن الأمور المهمة فعلًا بناءً على إجاباتك. لن يرى الجميع الأسئلة نفسها.</p>
+                    </article>
+
+                    <article class="step">
+                        <div class="step-number">03</div>
+                        <h3>نرتّب الصورة</h3>
+                        <p>ما الذي تعرفه؟ ما الذي ليس واضحًا؟ ما الذي يحتاج معلومات أكثر؟ وما الذي هو أصلًا تحت سيطرتك؟</p>
+                    </article>
+
+                    <article class="step">
+                        <div class="step-number">04</div>
+                        <h3>نحدد الخطوة التالية</h3>
+                        <p>ليست عشرين مهمة. خطوة واحدة واضحة، ومنطقية، ويمكنك أن تبدأ فيها.</p>
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ADAPTIVE ASSESSMENT -->
+        <section class="section assessment-section">
+            <div class="next-container">
+                <div class="assessment-layout">
+
+                    <div class="assessment-copy reveal reveal--right">
+
+                        <div class="section-heading reveal reveal--fade">
+                            <div class="section-label">التقييم التكيفي</div>
+                            <h2 class="section-title">
+                                ليس كل شخص يحتاج الأسئلة نفسها.
+                            </h2>
+                        </div>
+
+                        <p class="section-description">
+                            تخيل أنك تتحدث مع شخص يفهم وضعك فعلًا.
+                            <br><br>
+                            كلما أجبت، فهم عنك أكثر.
+                            فبدل أن يعطيك استبيانًا طويلًا من 30 أو 40 سؤالًا...
+                            <br><br>
+                            <strong class="text-next-ink">
+                                NEXT يحدد السؤال التالي بناءً على ما عرفه عنك.
+                            </strong>
+                            <br><br>
+                            قد تحتاج إلى 8 أسئلة.
+                            وقد نصل إلى فهم كافٍ قبل ذلك.
+                        </p>
+
+                        <div class="assessment-highlight">
+                            الفكرة ليست أن نسألك أكثر.
+                            <br>
+                            الفكرة أن نفهمك أفضل.
+                        </div>
+
+                    </div>
+
+                    <div class="assessment-visual reveal reveal--scale">
+                        <div class="assessment-card">
+
+                            <div class="assessment-header">
+                                <span class="font-english" style="font-size:12px;font-weight:600;">
+                                    NEXT
+                                </span>
+                                <span class="assessment-progress-text">
+                                    السؤال 4 من 8
+                                </span>
+                            </div>
+
+                            <div class="assessment-progress">
+                                <div class="assessment-progress-value"></div>
+                            </div>
+
+                            <div class="assessment-question">
+                                ما أكثر شيء غير واضح لك
+                                حاليًا بخصوص هدفك؟
+                            </div>
+
+                            <div class="assessment-options">
+                                <div class="assessment-option selected">
+                                    <span class="assessment-radio"></span>
+                                    ما المطلوب مني أصلًا؟
+                                </div>
+
+                                <div class="assessment-option">
+                                    <span class="assessment-radio"></span>
+                                    هل أنا مؤهل؟
+                                </div>
+
+                                <div class="assessment-option">
+                                    <span class="assessment-radio"></span>
+                                    أين يجب أن أركز وقتي؟
+                                </div>
+
+                                <div class="assessment-option">
+                                    <span class="assessment-radio"></span>
+                                    لست متأكدًا
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- OUTCOMES -->
+        <section class="section section-border">
+            <div class="next-container">
+
+                <div class="section-heading reveal reveal--fade">
+                    <div class="section-label">ماذا ستفهم؟</div>
+                    <h2 class="section-title">
+                        بدل قائمة مهام أطول، تحصل على صورة أوضح.
+                    </h2>
+                </div>
+
+                <div class="outcomes-grid stagger">
+
+                    <article class="outcome-card">
+                        <div class="outcome-icon">
+                            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="8"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
+                            </svg>
+                        </div>
+                        <h3>أين أنا الآن؟</h3>
+                        <p>صورة أوضح عن وضعك الحالي بدل الشعور العام بأنك لا تعرف أين تقف.</p>
+                    </article>
+
+                    <article class="outcome-card">
+                        <div class="outcome-icon">
+                            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 5h16"></path>
+                                <path d="M4 12h16"></path>
+                                <path d="M4 19h10"></path>
+                            </svg>
+                        </div>
+                        <h3>ما الذي أعرفه؟</h3>
+                        <p>المهارات والخبرات والإنجازات والمعلومات التي لديك فعلًا.</p>
+                    </article>
+
+                    <article class="outcome-card">
+                        <div class="outcome-icon">
+                            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="8"></circle>
+                                <path d="M12 8v4l2.5 2"></path>
+                            </svg>
+                        </div>
+                        <h3>ما الذي ليس واضحًا بعد؟</h3>
+                        <p>الأمور التي تحتاج بحثًا أو معلومات إضافية قبل أن تبني عليها قرارًا.</p>
+                    </article>
+
+                    <article class="outcome-card">
+                        <div class="outcome-icon">
+                            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="8"></circle>
+                                <path d="M12 8v8"></path>
+                                <path d="M8 12h8"></path>
+                            </svg>
+                        </div>
+                        <h3>ما الذي أستطيع تغييره؟</h3>
+                        <p>العوامل التي يمكنك فعلًا أن تؤثر فيها.</p>
+                    </article>
+
+                    <article class="outcome-card">
+                        <div class="outcome-icon">
+                            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h13"></path>
+                                <path d="m13 6 6 6-6 6"></path>
+                            </svg>
+                        </div>
+                        <h3>ما خطوتي التالية؟</h3>
+                        <p>ليست خطة مثالية على الورق. خطوة منطقية تناسب وضعك الآن.</p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- AUDIENCE -->
+        <section class="section section-border" id="who-is-it-for">
+            <div class="next-container">
+
+                <div class="section-heading reveal reveal--fade">
+                    <div class="section-label">لمن NEXT؟</div>
+                    <h2 class="section-title">
+                        قد يكون NEXT مناسبًا لك إذا...
+                    </h2>
+                </div>
+
+                <div class="audience-grid stagger">
+
+                    <article class="audience-card">
+                        <div class="audience-number">01</div>
+                        <h3>متخرج ولا يعرف ما بعد</h3>
+                        <p>NEXT يساعدك على رؤية وضعك الحالي بدل أن تبدأ مباشرة بعشرات الخيارات.</p>
+                    </article>
+
+                    <article class="audience-card">
+                        <div class="audience-number">02</div>
+                        <h3>تبحث عن عمل</h3>
+                        <p>بدل "يجب أن أتعلم كل شيء"، ساعد نفسك على معرفة ما لديك وما هي الفجوة الأقرب لهدفك.</p>
+                    </article>
+
+                    <article class="audience-card">
+                        <div class="audience-number">03</div>
+                        <h3>تفكر في الماجستير</h3>
+                        <p>افصل بين المعلومات التي تعرفها، والأمور التي تحتاج التأكد منها، والأمور التي يمكنك تحسينها.</p>
+                    </article>
+
+                    <article class="audience-card">
+                        <div class="audience-number">04</div>
+                        <h3>تفكر في تغيير مسارك</h3>
+                        <p>لا يلزم أن تعرف الطريق كاملًا. يكفي أن نعرف من أين تبدأ.</p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- TRUST -->
+        <section class="section trust-section">
+            <div class="next-container">
+                <div class="trust-layout">
+
+                    <div class="reveal reveal--right">
+                        <div class="section-label">الثقة أولًا</div>
+                        <h2 class="section-title">
+                            NEXT لن يخبرك
+                            بأنه يعرف مستقبلك.
+                        </h2>
+                    </div>
+
+                    <div class="trust-copy reveal reveal--left">
+                        <p>لأنه لا يعرفه.</p>
+
+                        <p>
+                            <strong style="color:#FFFFFF;">
+                                ونحن لن نتظاهر بأنه يعرفه.
+                            </strong>
+                        </p>
+
+                        <p>
+                            NEXT لا يضمن لك وظيفة.
+                            لا يضمن لك قبولًا جامعيًا.
+                            لا يخترع شروط قبول.
+                            ولا يعطيك نسب نجاح من عنده.
+                        </p>
+
+                        <p>
+                            <strong style="color:#FFFFFF;">
+                                دوره أبسط وأهم:
+                            </strong>
+                        </p>
+
+                        <p>
+                            يساعدك على فهم وضعك بشكل أفضل،
+                            لتكون قراراتك مبنية على فهم،
+                            لا على تخمين.
+                        </p>
+
+                        <div class="trust-list stagger">
+                            <div class="trust-item">لا وعود وهمية</div>
+                            <div class="trust-item">لا نسب نجاح مخترعة</div>
+                            <div class="trust-item">لا شروط قبول من عندنا</div>
+                            <div class="trust-item">لا ادعاء بمعرفة المستقبل</div>
+                        </div>
+
+                        <div class="trust-bottom">
+                            افهم أولًا. تحرّك ثانيًا.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FINAL CTA -->
+        <section class="cta-section">
+            <div class="next-container">
+                <div class="cta-card reveal reveal--scale">
+
+                    <h2 class="cta-title">
+                        لا يلزم أن تكون عارفًا كل شيء الآن.
+                    </h2>
+
+                    <p class="cta-description">
+                        ولا يلزم أن تكون لديك خطة كاملة.
+
+                        <span class="cta-highlight">
+                            ابدأ بسؤال أبسط: أين أنا الآن؟
+                        </span>
+
+                        ومن هناك...
+
+                        <span class="cta-highlight">
+                            لنعرف ما هي الخطوة التالية.
+                        </span>
+                    </p>
+
+                    <div class="cta-actions">
+                        <a href="register.html" class="btn btn-primary" data-cta="start" data-source="landing_final">
+                            ابدأ مع NEXT
+                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M5 12h14"></path>
+                                <path d="m13 6 6 6-6 6"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+        <!-- FOOTER -->
+    <footer>
+        <div class="next-container">
+
+            <div class="footer-main">
+
+                <!-- BRAND COLUMN -->
+                <div class="footer-brand">
+                    <a href="#top" class="brand" aria-label="NEXT - الصفحة الرئيسية">
+                        <span class="brand-symbol" aria-hidden="true">
+                            <span class="brand-diagonal"></span>
+                            <span class="brand-corner"></span>
+                        </span>
+                        <span class="brand-name">NEXT</span>
+                    </a>
+
+                    <p class="footer-tagline">
+                        منصة عربية تساعدك على فهم وضعك الحقيقي
+                        وتحديد خطوتك التالية — بدون وعود وهمية.
+                    </p>
+
+                    <p class="footer-slogan">
+                        افهم أولًا. تحرّك ثانيًا.
+                    </p>
+                </div>
+
+                <!-- LINKS COLUMNS -->
+                <nav class="footer-links" aria-label="روابط الفوتر">
+
+                    <div class="footer-column">
+                        <h4>المنتج</h4>
+                        <a href="#how-it-works">كيف يعمل NEXT؟</a>
+                        <a href="#why-next">لماذا NEXT؟</a>
+                        <a href="#who-is-it-for">لمن NEXT؟</a>
+                        <a href="register.html">ابدأ الآن</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>الحساب</h4>
+                        <a href="login.html">تسجيل الدخول</a>
+                        <a href="register.html">إنشاء حساب</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>قانوني</h4>
+                        <a href="privacy.html">سياسة الخصوصية</a>
+                        <a href="terms.html">شروط الاستخدام</a>
+                        <a href="mailto:hello@next.app">تواصل معنا</a>
+                    </div>
+
+                </nav>
+
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2026 NEXT. جميع الحقوق محفوظة.</span>
+                <!-- <span class="footer-made">مصنوع بعناية للمنطقة العربية</span> -->
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="scripts/core/storage.js"></script>
+    <script src="scripts/core/session.js"></script>
+    <script src="scripts/core/ui.js"></script>
+    <script src="scripts/core/motion.js"></script>
+    <script src="scripts/pages/landing.js"></script>
+    <!-- PWA Script -->
+    <script src="scripts/core/pwa.js"></script>
+
+</body>
+
+</html>

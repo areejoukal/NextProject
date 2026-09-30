@@ -1,0 +1,361 @@
+/* =====================================================
+   NEXT — COMPONENTS
+   ====================================================== */
+
+/* =====================================================
+   PRIMARY BUTTON
+   ====================================================== */
+
+.primary-button {
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 22px;
+    border: 1px solid var(--next-blue);
+    border-radius: 10px;
+    background: var(--next-blue);
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+        background-color var(--motion-dur-fast) var(--motion-ease-soft),
+        border-color var(--motion-dur-fast) var(--motion-ease-soft),
+        transform var(--motion-dur-base) var(--motion-ease-enter),
+        box-shadow var(--motion-dur-base) var(--motion-ease-soft);
+}
+
+.primary-button:hover:not(:disabled) {
+    background: var(--next-dark-blue);
+    border-color: var(--next-dark-blue);
+    transform: translateY(-1.5px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.22);
+}
+
+.primary-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.primary-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.primary-button svg {
+    transition: transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+.primary-button:hover:not(:disabled) svg {
+    transform: translateX(-3px);
+}
+
+/* =====================================================
+   SECONDARY BUTTON
+   ====================================================== */
+
+.secondary-button {
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 18px;
+    border: 1px solid var(--next-border);
+    border-radius: 10px;
+    background: var(--next-surface);
+    color: var(--next-ink);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition:
+        background-color var(--motion-dur-fast) var(--motion-ease-soft),
+        border-color var(--motion-dur-fast) var(--motion-ease-soft);
+}
+
+.secondary-button:hover {
+    background: #F9FAFB;
+    border-color: #D1D5DB;
+}
+
+/* =====================================================
+   CARD
+   ====================================================== */
+
+.card {
+    background: var(--next-surface);
+    border: 1px solid var(--next-border);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--next-shadow-soft);
+    transition:
+        border-color var(--motion-dur-base) var(--motion-ease-soft),
+        box-shadow var(--motion-dur-base) var(--motion-ease-soft),
+        transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+.card:hover {
+    border-color: #D1D5DB;
+    box-shadow: 0 8px 22px rgba(17, 24, 39, 0.06);
+}
+
+.card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    color: var(--next-ink);
+}
+
+.card-description {
+    font-size: 13px;
+    color: var(--next-muted);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* =====================================================
+   TEXT LINK
+   ====================================================== */
+
+.text-link {
+    color: var(--next-blue);
+    font-weight: 500;
+    font-size: 13px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition:
+        color var(--motion-dur-fast) var(--motion-ease-soft),
+        gap var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+.text-link:hover {
+    color: var(--next-dark-blue);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* =====================================================
+   SPINNER
+   ====================================================== */
+
+.button-spinner {
+    width: 17px;
+    height: 17px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-top-color: #FFFFFF;
+    border-radius: 50%;
+    animation: spin 700ms linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* =====================================================
+   NOTIFICATIONS BADGE
+   ====================================================== */
+
+.notifications-badge {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    min-width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    background: var(--next-blue);
+    color: #FFFFFF;
+    border-radius: 999px;
+    border: 2px solid var(--next-surface);
+    font-family: 'Poppins', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    line-height: 1;
+    animation: badgeIn var(--motion-dur-base) var(--motion-ease-enter) both;
+}
+
+@keyframes badgeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* =====================================================
+   TOAST
+   ====================================================== */
+
+.toast {
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    z-index: 100;
+    min-width: 260px;
+    max-width: 360px;
+    padding: 14px 16px;
+    background: var(--next-ink);
+    color: #FFFFFF;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+    box-shadow: var(--next-shadow-large);
+    opacity: 0;
+    transform: translateY(var(--motion-distance-sm));
+    pointer-events: none;
+    transition:
+        opacity var(--motion-dur-base) var(--motion-ease-soft),
+        transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =====================================================
+   REDUCED MOTION
+   ====================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .button-spinner {
+        animation-duration: 1.4s !important;
+    }
+}
+
+/* =====================================================
+   PAGE HEADER — مكوّن مشترك لكل الصفحات
+   ====================================================== */
+
+.page-header {
+    max-width: 720px;
+    margin-bottom: 40px;
+}
+
+.page-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--next-blue);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.page-kicker-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--next-blue);
+    animation: softPulse 2400ms var(--motion-ease-soft) infinite;
+}
+
+.page-title {
+    margin: 0;
+    color: var(--next-ink);
+    font-size: 36px;
+    line-height: 1.35;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.page-description {
+    margin: 16px 0 0;
+    color: var(--next-muted-strong);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* =====================================================
+   NEXT SYMBOL (شعار NEXT)
+   ====================================================== */
+
+.next-symbol {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    transition: transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+.next-symbol::before,
+.next-symbol::after {
+    content: '';
+    position: absolute;
+    width: 3.5px;
+    height: 24px;
+    top: 2px;
+    background: var(--next-ink);
+    border-radius: 1.5px;
+}
+
+.next-symbol::before { left: 4px; }
+.next-symbol::after { right: 4px; }
+
+.next-symbol-diagonal {
+    position: absolute;
+    width: 3.5px;
+    height: 26px;
+    left: 12px;
+    top: 1px;
+    background: var(--next-ink);
+    border-radius: 1.5px;
+    transform: rotate(38deg);
+    transform-origin: center;
+}
+
+.next-symbol-corner {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    right: -1px;
+    top: 0;
+    background: var(--next-blue);
+    border-radius: 2px;
+    z-index: 3;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .page-header {
+        margin-bottom: 32px;
+    }
+
+    .page-title {
+        font-size: 28px;
+        line-height: 1.4;
+    }
+
+    .page-description {
+        font-size: 15px;
+        line-height: 1.85;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .page-kicker-dot {
+        animation: none;
+    }
+}
+

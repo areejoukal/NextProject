@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>إنشاء حساب — NEXT</title>
+    <meta name="description" content="أنشئ حسابك في NEXT وابدأ بفهم وضعك الحقيقي. تقييم تكيفي، خطوة واحدة واضحة، وبدون وعود وهمية. مجاني.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://next.app/register.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEXT">
+    <meta property="og:locale" content="ar_AR">
+    <meta property="og:title" content="إنشاء حساب — NEXT">
+    <meta property="og:description" content="أنشئ حسابك في NEXT وابدأ بفهم وضعك الحقيقي. مجاني، بدون تخمين.">
+    <meta property="og:url" content="https://next.app/register.html">
+    <meta property="og:image" content="https://next.app/icons/og-register.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEXT — إنشاء حساب">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="إنشاء حساب — NEXT">
+    <meta name="twitter:description" content="أنشئ حسابك في NEXT وابدأ بفهم وضعك الحقيقي. مجاني.">
+    <meta name="twitter:image" content="https://next.app/icons/og-register.png">
+    <meta name="twitter:image:alt" content="NEXT — إنشاء حساب">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#F7F8FA">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-72.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NEXT">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="NEXT">
+
+    <!-- TAILWIND -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        next: {
+                            blue: '#2563EB',
+                            blueDark: '#1D4ED8',
+                            ink: '#111827',
+                            muted: '#6B7280',
+                            mutedStrong: '#4B5563',
+                            bg: '#F7F8FA',
+                            surface: '#FFFFFF',
+                            border: '#E5E7EB',
+                            success: '#16A34A',
+                            warning: '#D97706',
+                            danger: '#DC2626'
+                        }
+                    },
+                    fontFamily: {
+                        arabic: ['IBM Plex Sans Arabic', 'sans-serif'],
+                        poppins: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/motion.css">
+    <link rel="stylesheet" href="styles/pages/auth.css">
+</head>
+
+<body>
+
+    <main class="min-h-screen px-4 pt-6 pb-10 sm:px-6 sm:pt-8">
+
+        <div class="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center">
+
+            <!-- REGISTER CARD -->
+            <section class="register-card" aria-labelledby="register-title">
+
+                <a href="index.html" class="logo-badge" aria-label="NEXT - الصفحة الرئيسية">
+                    <div class="next-symbol" aria-hidden="true">
+                        <span class="next-symbol-diagonal"></span>
+                        <span class="next-symbol-corner"></span>
+                    </div>
+                </a>
+
+
+                <div class="text-center reveal-item" style="--i: 0;">
+                    <h1
+                        id="register-title"
+                        style="
+                            margin: 0;
+                            font-size: 28px;
+                            line-height: 1.35;
+                            font-weight: 600;
+                            letter-spacing: -0.025em;
+                            color: var(--next-ink);
+                        "
+                    >
+                        ابدأ من هنا.
+                    </h1>
+
+                    <p
+                        style="
+                            margin: 8px 0 0;
+                            font-size: 15px;
+                            line-height: 1.75;
+                            color: var(--next-muted-strong);
+                        "
+                    >
+                        أنشئ حسابك لمساعدة NEXT على فهم وضعك.
+                    </p>
+                </div>
+
+
+                <form id="registerForm" style="margin-top: 32px;" novalidate>
+
+                    <!-- NAME -->
+                    <div class="reveal-item" style="--i: 1;">
+                        <label
+                            for="name"
+                            style="
+                                display: block;
+                                margin-bottom: 8px;
+                                font-size: 14px;
+                                font-weight: 500;
+                                color: var(--next-ink);
+                            "
+                        >
+                            الاسم
+                        </label>
+
+                        <input
+                            id="name"
+                            name="name"
+                            type="text"
+                            autocomplete="name"
+                            placeholder="اكتب اسمك"
+                            class="form-input"
+                            required
+                        >
+
+                        <p id="nameError" class="error-message" role="alert">
+                            اكتب اسمك للمتابعة.
+                        </p>
+                    </div>
+
+
+                    <!-- EMAIL -->
+                    <div class="reveal-item" style="--i: 2; margin-top: 20px;">
+                        <label
+                            for="email"
+                            style="
+                                display: block;
+                                margin-bottom: 8px;
+                                font-size: 14px;
+                                font-weight: 500;
+                                color: var(--next-ink);
+                            "
+                        >
+                            البريد الإلكتروني
+                        </label>
+
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            autocomplete="email"
+                            inputmode="email"
+                            placeholder="example@email.com"
+                            class="form-input"
+                            dir="ltr"
+                            required
+                        >
+
+                        <p id="emailError" class="error-message" role="alert">
+                            أدخل بريدًا إلكترونيًا صحيحًا.
+                        </p>
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="reveal-item" style="--i: 3; margin-top: 20px;">
+                        <label
+                            for="password"
+                            style="
+                                display: block;
+                                margin-bottom: 8px;
+                                font-size: 14px;
+                                font-weight: 500;
+                                color: var(--next-ink);
+                            "
+                        >
+                            كلمة المرور
+                        </label>
+
+                        <div class="password-wrapper">
+                            <input
+                                id="password"
+                                name="password"
+                                type="password"
+                                autocomplete="new-password"
+                                placeholder="أنشئ كلمة مرور"
+                                class="form-input"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="passwordToggle"
+                                class="password-toggle"
+                                aria-label="إظهار كلمة المرور"
+                                aria-pressed="false"
+                            >
+                                <svg
+                                    id="eyeIcon"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="19"
+                                    height="19"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    aria-hidden="true"
+                                >
+                                    <path d="M2.062 12.348a1 1 0 0 1 0-.696C3.423 7.604 7.36 5 12 5c4.64 0 8.577 2.604 9.938 6.652a1 1 0 0 1 0 .696C20.577 16.396 16.64 19 12 19c-4.64 0-8.577-2.604-9.938-6.652Z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+
+
+                        <!-- Requirements -->
+                        <div id="passwordRequirements" class="password-requirements">
+                            <div id="lengthRequirement" class="requirement">
+                                <span class="requirement-dot"></span>
+                                <span>8 أحرف على الأقل</span>
+                            </div>
+
+                            <div id="numberRequirement" class="requirement">
+                                <span class="requirement-dot"></span>
+                                <span>رقم واحد على الأقل</span>
+                            </div>
+
+                            <div id="uppercaseRequirement" class="requirement">
+                                <span class="requirement-dot"></span>
+                                <span>حرف كبير واحد على الأقل</span>
+                            </div>
+
+                            <div id="specialRequirement" class="requirement">
+                                <span class="requirement-dot"></span>
+                                <span>رمز خاص واحد على الأقل</span>
+                            </div>
+                        </div>
+
+                        <p id="passwordError" class="error-message" role="alert">
+                            كلمة المرور لا تستوفي المتطلبات.
+                        </p>
+                    </div>
+
+
+                    <!-- CONFIRM -->
+                    <div class="reveal-item" style="--i: 4; margin-top: 20px;">
+                        <label
+                            for="passwordConfirmation"
+                            style="
+                                display: block;
+                                margin-bottom: 8px;
+                                font-size: 14px;
+                                font-weight: 500;
+                                color: var(--next-ink);
+                            "
+                        >
+                            تأكيد كلمة المرور
+                        </label>
+
+                        <div class="password-wrapper">
+                            <input
+                                id="passwordConfirmation"
+                                name="password_confirmation"
+                                type="password"
+                                autocomplete="new-password"
+                                placeholder="أعد كتابة كلمة المرور"
+                                class="form-input"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="confirmationToggle"
+                                class="password-toggle"
+                                aria-label="إظهار كلمة المرور"
+                                aria-pressed="false"
+                            >
+                                <svg
+                                    id="confirmationEyeIcon"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="19"
+                                    height="19"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    aria-hidden="true"
+                                >
+                                    <path d="M2.062 12.348a1 1 0 0 1 0-.696C3.423 7.604 7.36 5 12 5c4.64 0 8.577 2.604 9.938 6.652a1 1 0 0 1 0 .696C20.577 16.396 16.64 19 12 19c-4.64 0-8.577-2.604-9.938-6.652Z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <p id="confirmationError" class="error-message" role="alert">
+                            كلمتا المرور غير متطابقتين.
+                        </p>
+                    </div>
+
+
+                    <!-- TERMS -->
+                    <div class="reveal-item" style="--i: 5; margin-top: 22px;">
+                        <label class="terms-label">
+                            <input id="terms" name="terms" type="checkbox" class="terms-checkbox" required>
+                            <span class="terms-text">
+                                أوافق على
+                                <a href="#" class="text-link">شروط الاستخدام</a>
+                                و
+                                <a href="#" class="text-link">سياسة الخصوصية</a>.
+                            </span>
+                        </label>
+
+                        <p id="termsError" class="error-message" role="alert">
+                            يجب الموافقة على الشروط للمتابعة.
+                        </p>
+                    </div>
+
+
+                    <!-- SUBMIT -->
+                    <div class="reveal-item" style="--i: 6; margin-top: 24px;">
+                        <button
+                            id="registerButton"
+                            type="submit"
+                            class="primary-button"
+                            data-cta="register-submit"
+                        >
+                            <span id="registerButtonText">إنشاء الحساب</span>
+                        </button>
+                    </div>
+
+
+                    <!-- DIVIDER -->
+                    <div class="divider reveal-item" style="--i: 7;">
+                        <span>أو</span>
+                    </div>
+
+
+                    <!-- GOOGLE -->
+                    <div class="reveal-item" style="--i: 8;">
+                        <button
+                            type="button"
+                            id="googleButton"
+                            class="google-button"
+                            aria-label="التسجيل باستخدام Google"
+                            data-cta="register-google"
+                        >
+                            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill="#4285F4" d="M21.35 12.27c0-.72-.06-1.42-.18-2.09H12v3.95h5.24a4.48 4.48 0 0 1-1.94 2.94v2.45h3.14c1.84-1.69 2.91-4.18 2.91-7.25Z"></path>
+                                <path fill="#34A853" d="M12 21.72c2.63 0 4.84-.87 6.45-2.35l-3.14-2.45c-.87.58-1.98.92-3.31.92-2.54 0-4.69-1.72-5.46-4.03H3.3v2.53A9.74 9.74 0 0 0 12 21.72Z"></path>
+                                <path fill="#FBBC05" d="M6.54 13.81A5.85 5.85 0 0 1 6.23 12c0-.63.11-1.24.31-1.81V7.66H3.3A9.75 9.75 0 0 0 2.27 12c0 1.57.38 3.05 1.03 4.34l3.24-2.53Z"></path>
+                                <path fill="#EA4335" d="M12 6.16c1.43 0 2.71.49 3.72 1.45l2.79-2.79C16.84 3.26 14.63 2.28 12 2.28a9.74 9.74 0 0 0-8.7 5.38l3.24 2.53C7.31 7.88 9.46 6.16 12 6.16Z"></path>
+                            </svg>
+                            <span>التسجيل باستخدام Google</span>
+                        </button>
+                    </div>
+
+
+                    <!-- LOGIN LINK -->
+                    <p
+                        class="reveal-item"
+                        style="
+                            --i: 9;
+                            margin: 28px 0 0;
+                            text-align: center;
+                            font-size: 14px;
+                            line-height: 1.75;
+                            color: var(--next-muted);
+                        "
+                    >
+                        لديك حساب بالفعل؟
+                        <a href="login.html" class="text-link">تسجيل الدخول</a>
+                    </p>
+
+                </form>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="reveal-item" style="--i: 10; margin-top: 28px;">
+                <p
+                    style="
+                        margin: 0;
+                        font-family: 'Poppins', sans-serif;
+                        font-size: 11px;
+                        color: #9CA3AF;
+                    "
+                >
+                    © 2026 NEXT
+                </p>
+            </footer>
+
+        </div>
+
+    </main>
+
+
+    <!-- SCRIPTS -->
+    <script src="scripts/core/storage.js"></script>
+    <script src="scripts/core/session.js"></script>
+    <script src="scripts/core/ui.js"></script>
+    <script src="scripts/core/motion.js"></script>
+    <script src="scripts/pages/register.js"></script>
+    <!-- PWA Script -->
+    <script src="scripts/core/pwa.js"></script>
+
+</body>
+
+</html>

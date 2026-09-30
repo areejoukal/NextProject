@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>هدفي — NEXT</title>
+    <meta name="description" content="صفحة هدفك في NEXT — الهدف الذي يعتمد عليه فهمنا لوضعك، وترتيب ما هو واضح، وتحديد خطوتك التالية.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://next.app/goal-details.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEXT">
+    <meta property="og:locale" content="ar_AR">
+    <meta property="og:title" content="هدفي — NEXT">
+    <meta property="og:description" content="الهدف الذي يعتمد عليه فهمنا لوضعك، وترتيب ما هو واضح، وتحديد خطوتك التالية.">
+    <meta property="og:url" content="https://next.app/goal-details.html">
+    <meta property="og:image" content="https://next.app/icons/og-goal-details.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEXT — هدفي">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="هدفي — NEXT">
+    <meta name="twitter:description" content="الهدف الذي يعتمد عليه فهمنا لوضعك، وخطوتك التالية.">
+    <meta name="twitter:image" content="https://next.app/icons/og-goal-details.png">
+    <meta name="twitter:image:alt" content="NEXT — هدفي">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#F7F8FA">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-72.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NEXT">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="NEXT">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        next: {
+                            blue: '#2563EB',
+                            blueDark: '#1D4ED8',
+                            ink: '#111827',
+                            muted: '#6B7280',
+                            mutedStrong: '#4B5563',
+                            bg: '#F7F8FA',
+                            surface: '#FFFFFF',
+                            border: '#E5E7EB',
+                            success: '#16A34A',
+                            warning: '#D97706',
+                            danger: '#DC2626'
+                        }
+                    },
+                    fontFamily: {
+                        arabic: ['IBM Plex Sans Arabic', 'sans-serif'],
+                        poppins: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/motion.css">
+    <link rel="stylesheet" href="styles/pages/goal-details.css">
+</head>
+
+<body data-page="goal-details">
+
+    <div class="app-shell">
+
+        <div id="sidebarOverlay" class="sidebar-overlay" aria-hidden="true"></div>
+
+        <div data-component="sidebar"></div>
+
+        <div class="main-area">
+
+            <div data-component="topbar"></div>
+
+            <main class="page-container">
+
+                <!-- PAGE HEADER -->
+                <header class="page-header reveal" style="--i: 0;">
+                    <div class="page-kicker">
+                        <span class="page-kicker-dot" aria-hidden="true"></span>
+                        الاتجاه الذي تعمل عليه الآن
+                    </div>
+                    <h1 class="page-title">هدفي</h1>
+                    <p class="page-description">
+                        هذا هو الهدف الذي يعتمد عليه NEXT في فهم وضعك،
+                        وترتيب ما هو واضح، وما يحتاج إلى مزيد من الفهم،
+                        وتحديد خطوتك التالية.
+                    </p>
+                </header>
+
+                <!-- GOAL CARD -->
+                <section id="goalView" class="goal-card reveal" style="--i: 1;">
+
+                    <div class="goal-header">
+                        <div class="goal-label">
+                            <span class="goal-label-dot" aria-hidden="true"></span>
+                            الهدف الحالي
+                        </div>
+                        <h2 id="goalTitle" class="goal-title">جارٍ تحميل هدفك...</h2>
+                        <p id="goalDescription" class="goal-description">نقرأ المعلومات المحفوظة عن هدفك.</p>
+                    </div>
+
+                    <div id="detailsGrid" class="details-grid"></div>
+
+                    <div class="goal-note">
+                        <div class="goal-note-title">لماذا هذا مهم؟</div>
+                        <div class="goal-note-text">
+                            هدفك ليس مجرد عنوان. NEXT يستخدمه كسياق
+                            لفهم إجاباتك، وتحديد الأسئلة التي تحتاجها،
+                            والخطوات التي لها معنى بالنسبة لوضعك الحالي.
+                        </div>
+                    </div>
+
+                    <div class="goal-actions">
+                        <div class="action-description">
+                            يمكنك تعديل هدفك إذا تغيّر الاتجاه الذي تريد العمل عليه.
+                        </div>
+
+                        <div class="actions-group">
+                            <button id="reassessButton" type="button" class="secondary-button" data-cta="reassess-goal">
+                                أعد فهم وضعي
+                            </button>
+
+                            <button id="editGoalButton" type="button" class="primary-button" data-cta="edit-goal">
+                                تعديل الهدف
+                            </button>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- EMPTY STATE -->
+                <section id="emptyState" class="goal-card reveal" style="--i: 2; display: none;">
+                    <div class="empty-state">
+
+                        <div class="empty-icon" aria-hidden="true">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="9"></circle>
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <circle cx="12" cy="12" r="1" fill="currentColor"></circle>
+                            </svg>
+                        </div>
+
+                        <div class="empty-title">لا يوجد هدف محفوظ حاليًا</div>
+
+                        <p class="empty-text">
+                            يبدو أن إعداد هدفك لم يكتمل بعد.
+                            ارجع إلى البداية وحدد ما تريد أن تفهم وضعك من أجله.
+                        </p>
+
+                        <div style="margin-top: 24px;">
+                            <a href="goal-selection.html" class="primary-button">تحديد هدفي</a>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- EDIT PANEL -->
+                <section id="editPanel" class="edit-panel">
+
+                    <div class="edit-header">
+                        <h2 class="edit-title">تعديل الهدف</h2>
+                        <p class="edit-description">
+                            غيّر المعلومات التي لم تعد تعبّر عن الاتجاه
+                            الذي تريد العمل عليه.
+                        </p>
+                    </div>
+
+                    <div class="edit-body">
+
+                        <form id="goalForm" novalidate>
+
+                            <div id="dynamicFields" class="form-grid"></div>
+
+                            <div class="change-warning">
+                                <svg class="warning-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M12 3l9 17H3L12 3Z"></path>
+                                    <path d="M12 9v5"></path>
+                                    <path d="M12 17h.01"></path>
+                                </svg>
+
+                                <div>
+                                    <div class="warning-title">تغيير الهدف قد يغيّر فهم NEXT لوضعك</div>
+                                    <div class="warning-text">
+                                        إذا تغيّر هدفك بشكل جوهري،
+                                        فقد تحتاج بعض المعلومات إلى إعادة تقييم،
+                                        وقد تتغيّر الخطوات التي يقترحها NEXT.
+                                        لن نفترض أن الخطة السابقة ما زالت مناسبة.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="edit-actions">
+                                <button type="submit" class="primary-button" data-cta="save-goal">
+                                    حفظ الهدف
+                                </button>
+
+                                <button id="cancelEditButton" type="button" class="secondary-button">
+                                    إلغاء
+                                </button>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="scripts/core/storage.js"></script>
+    <script src="scripts/core/session.js"></script>
+    <script src="scripts/core/nav-config.js"></script>
+    <script src="scripts/core/components.js"></script>
+    <script src="scripts/core/ui.js"></script>
+    <script src="scripts/core/motion.js"></script>
+    <script src="scripts/pages/goal-details.js"></script>
+    <!-- PWA Script -->
+    <script src="scripts/core/pwa.js"></script>
+</body>
+
+</html>

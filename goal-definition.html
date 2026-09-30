@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>تحديد الهدف — NEXT</title>
+    <meta name="description" content="صفحة تحديد الهدف في NEXT — نوضّح هدفك بدقة عبر أسئلة قصيرة، لنفهم وضعك ونحدد خطوتك القادمة على أساسه.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://next.app/goal-definition.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEXT">
+    <meta property="og:locale" content="ar_AR">
+    <meta property="og:title" content="تحديد الهدف — NEXT">
+    <meta property="og:description" content="نوضّح هدفك بدقة عبر أسئلة قصيرة، لنفهم وضعك ونحدد خطوتك القادمة على أساسه.">
+    <meta property="og:url" content="https://next.app/goal-definition.html">
+    <meta property="og:image" content="https://next.app/icons/og-goal-definition.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEXT — تحديد الهدف">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="تحديد الهدف — NEXT">
+    <meta name="twitter:description" content="نوضّح هدفك بدقة، لنحدد خطوتك القادمة على أساسه.">
+    <meta name="twitter:image" content="https://next.app/icons/og-goal-definition.png">
+    <meta name="twitter:image:alt" content="NEXT — تحديد الهدف">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#F7F8FA">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-72.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NEXT">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="NEXT">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/motion.css">
+    <link rel="stylesheet" href="styles/pages/goal-definition.css">
+</head>
+
+<body data-page="goal-definition">
+
+    <!-- Ambient Background -->
+    <div class="ambient-bg" aria-hidden="true">
+        <div class="ambient-blob ambient-blob-1"></div>
+        <div class="ambient-blob ambient-blob-2"></div>
+    </div>
+
+
+    <div class="onboarding-shell">
+
+        <!-- TOPBAR -->
+        <header class="onboarding-topbar">
+            <div class="onboarding-topbar-inner">
+
+                <a href="index.html" class="onboarding-brand" aria-label="NEXT">
+                    <span class="onboarding-brand-mark">
+                        <span class="brand-mark-bar brand-mark-bar-1"></span>
+                        <span class="brand-mark-bar brand-mark-bar-2"></span>
+                        <span class="brand-mark-bar brand-mark-bar-3"></span>
+                        <span class="brand-mark-corner"></span>
+                    </span>
+                    <span class="onboarding-brand-name">NEXT</span>
+                </a>
+
+                <!-- Progress (2/5) -->
+                <div class="onboarding-progress" aria-label="تقدم الرحلة">
+                    <span class="onboarding-progress-step completed"></span>
+                    <span class="onboarding-progress-step active"></span>
+                    <span class="onboarding-progress-step"></span>
+                    <span class="onboarding-progress-step"></span>
+                    <span class="onboarding-progress-step"></span>
+                </div>
+
+                <a href="goal-selection.html" class="onboarding-back">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                    رجوع
+                </a>
+
+            </div>
+        </header>
+
+
+        <!-- MAIN -->
+        <main class="onboarding-main">
+
+            <!-- INVALID STATE -->
+            <div id="invalidState" class="invalid-state" style="display: none;">
+                <div class="invalid-state-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <path d="M12 8v4"></path>
+                        <path d="M12 16h.01"></path>
+                    </svg>
+                </div>
+
+                <h1 class="invalid-state-title">لنبدأ من البداية.</h1>
+                <p class="invalid-state-text">
+                    لم نجد الهدف الذي اخترته.
+                    ارجع إلى الخطوة السابقة وحدد الهدف أولًا.
+                </p>
+
+                <a href="goal-selection.html" class="primary-button primary-button-large">
+                    <span>اختيار الهدف</span>
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="m13 6 6 6-6 6"></path>
+                    </svg>
+                </a>
+            </div>
+
+
+            <!-- CONTENT -->
+            <div id="definitionContent" style="display: none;">
+
+                <!-- HEADER -->
+                <header class="onboarding-header">
+                    <div class="onboarding-eyebrow" data-anim="eyebrow">
+                        <span class="onboarding-eyebrow-dot" aria-hidden="true"></span>
+                        <span>الخطوة الثانية</span>
+                    </div>
+
+                    <h1 class="onboarding-title" id="pageTitle" data-anim="title"></h1>
+
+                    <p class="onboarding-description" id="pageDescription" data-anim="description"></p>
+
+                    <!-- Goal Context Badge -->
+                    <div class="goal-context-badge" id="goalContextBadge">
+                        <span class="goal-context-icon" id="goalContextIcon"></span>
+                        <span class="goal-context-text" id="goalContextText"></span>
+                    </div>
+                </header>
+
+
+                <!-- FORM CARD -->
+                <div class="form-card">
+
+                    <form id="goalForm" class="form-area" novalidate>
+
+                        <div id="dynamicFields" class="form-fields"></div>
+
+                        <!-- ACTIONS -->
+                        <div class="form-actions">
+                            <button type="button" id="backButton" class="secondary-button">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg>
+                                رجوع
+                            </button>
+
+                            <button type="submit" id="continueButton" class="primary-button primary-button-large" data-cta="continue-definition">
+                                <span class="button-shine" aria-hidden="true"></span>
+                                <span>التالي</span>
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m13 6 6 6-6 6"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="onboarding-footer">
+            © 2026 NEXT — افهم أولًا. تحرّك ثانيًا.
+        </footer>
+
+    </div>
+
+
+    <!-- SCRIPTS -->
+    <script src="scripts/core/storage.js"></script>
+    <script src="scripts/core/session.js"></script>
+    <script src="scripts/core/ui.js"></script>
+    <script src="scripts/core/motion.js"></script>
+    <script src="scripts/pages/goal-definition.js"></script>
+    <!-- PWA Script -->
+    <script src="scripts/core/pwa.js"></script>
+</body>
+
+</html>

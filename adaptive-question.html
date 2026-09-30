@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>التقييم التكيفي — NEXT</title>
+    <meta name="description" content="صفحة التقييم التكيفي في NEXT — أسئلة قصيرة تتكيّف مع إجاباتك لفهم وضعك الحقيقي وتحديد خطوتك التالية.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://next.app/adaptive-question.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEXT">
+    <meta property="og:locale" content="ar_AR">
+    <meta property="og:title" content="التقييم التكيفي — NEXT">
+    <meta property="og:description" content="أسئلة قصيرة تتكيّف مع إجاباتك لفهم وضعك الحقيقي. بدون تخمين.">
+    <meta property="og:url" content="https://next.app/adaptive-question.html">
+    <meta property="og:image" content="https://next.app/icons/og-adaptive-question.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEXT — التقييم التكيفي">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="التقييم التكيفي — NEXT">
+    <meta name="twitter:description" content="أسئلة قصيرة تتكيّف مع إجاباتك لفهم وضعك الحقيقي.">
+    <meta name="twitter:image" content="https://next.app/icons/og-adaptive-question.png">
+    <meta name="twitter:image:alt" content="NEXT — التقييم التكيفي">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#F7F8FA">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-72.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NEXT">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="NEXT">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/motion.css">
+    <link rel="stylesheet" href="styles/pages/adaptive-question.css">
+</head>
+
+<body data-page="adaptive-question">
+
+    <!-- Ambient Background -->
+    <div class="ambient-bg" aria-hidden="true">
+        <div class="ambient-blob ambient-blob-1"></div>
+        <div class="ambient-blob ambient-blob-2"></div>
+    </div>
+
+
+    <div class="onboarding-shell">
+
+        <!-- TOPBAR -->
+        <header class="onboarding-topbar">
+            <div class="onboarding-topbar-inner">
+
+                <a href="index.html" class="onboarding-brand" aria-label="NEXT">
+                    <span class="onboarding-brand-mark">
+                        <span class="brand-mark-bar brand-mark-bar-1"></span>
+                        <span class="brand-mark-bar brand-mark-bar-2"></span>
+                        <span class="brand-mark-bar brand-mark-bar-3"></span>
+                        <span class="brand-mark-corner"></span>
+                    </span>
+                    <span class="onboarding-brand-name">NEXT</span>
+                </a>
+
+                <div class="onboarding-progress" aria-label="تقدم التقييم">
+                    <span class="onboarding-progress-step completed"></span>
+                    <span class="onboarding-progress-step completed"></span>
+                    <span class="onboarding-progress-step completed"></span>
+                    <span class="onboarding-progress-step completed"></span>
+                    <span class="onboarding-progress-step active"></span>
+                </div>
+
+                <a href="assessment-introduction.html" class="onboarding-back">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                    رجوع
+                </a>
+
+            </div>
+        </header>
+
+
+        <!-- MAIN -->
+        <main class="onboarding-main">
+
+            <!-- STEPPER -->
+            <div class="stepper-area" id="stepperArea">
+                <div class="stepper-meta">
+                    <span class="stepper-label">
+                        <span class="stepper-label-dot" aria-hidden="true"></span>
+                        التقييم التكيفي
+                    </span>
+
+                    <span id="stepperCount" class="stepper-count">1 / 8</span>
+                </div>
+
+                <div
+                    class="stepper"
+                    id="stepper"
+                    role="progressbar"
+                    aria-valuemin="1"
+                    aria-valuemax="8"
+                    aria-valuenow="1"
+                    aria-label="تقدم التقييم"
+                >
+                    <div class="stepper-progress" id="stepperProgress" aria-hidden="true"></div>
+
+                    <span class="step-dot upcoming" data-step="1"></span>
+                    <span class="step-dot upcoming" data-step="2"></span>
+                    <span class="step-dot upcoming" data-step="3"></span>
+                    <span class="step-dot upcoming" data-step="4"></span>
+                    <span class="step-dot upcoming" data-step="5"></span>
+                    <span class="step-dot upcoming" data-step="6"></span>
+                    <span class="step-dot upcoming" data-step="7"></span>
+                    <span class="step-dot upcoming" data-step="8"></span>
+                </div>
+            </div>
+
+
+            <!-- STATUS BLOCK (loading / error) -->
+            <div id="statusBlock" class="status-block" style="display: none;">
+                <div id="statusSpinner" class="status-spinner"></div>
+                <h2 id="statusTitle" class="status-title">جارٍ التحضير...</h2>
+                <p id="statusText" class="status-text">لحظة من فضلك.</p>
+            </div>
+
+
+            <!-- QUESTION CARD -->
+            <section
+                id="questionCard"
+                class="question-card"
+                aria-labelledby="questionTitle"
+                style="display: none;"
+            >
+
+                <div class="question-type">
+                    <span class="question-type-dot" aria-hidden="true"></span>
+                    <span id="questionType">سؤال سريع</span>
+                </div>
+
+                <h1 id="questionTitle" class="question-title"></h1>
+
+                <p id="questionDescription" class="question-description"></p>
+
+                <div id="answerContainer" class="options"></div>
+
+
+                <div class="question-actions">
+                    <button
+                        id="backButton"
+                        type="button"
+                        class="secondary-button"
+                    >
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                        السابق
+                    </button>
+
+                    <button
+                        id="nextButton"
+                        type="button"
+                        class="primary-button primary-button-large"
+                        disabled
+                        data-cta="next-question"
+                    >
+                        <span class="button-shine" aria-hidden="true"></span>
+                        <span id="nextLabel">التالي</span>
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m13 6 6 6-6 6"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="question-helper">
+                    لا حاجة لاختيار الإجابة المثالية. اختر الأقرب إلى وضعك.
+                </p>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="onboarding-footer">
+            © 2026 NEXT — افهم أولًا. تحرّك ثانيًا.
+        </footer>
+
+    </div>
+
+
+    <!-- SCRIPTS -->
+    <script src="scripts/core/storage.js"></script>
+    <script src="scripts/core/session.js"></script>
+    <script src="scripts/core/ui.js"></script>
+    <script src="scripts/core/motion.js"></script>
+    <script src="scripts/pages/adaptive-question.js"></script>
+    <!-- PWA Script -->
+    <script src="scripts/core/pwa.js"></script>
+
+</body>
+
+</html>

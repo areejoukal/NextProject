@@ -1,0 +1,122 @@
+{
+    "name": "NEXT — افهم وضعك",
+    "short_name": "NEXT",
+    "description": "اعرف وين أنت، واعرف شو خطوتك الجاية. NEXT يساعدك تفهم وضعك الحالي وتحدد خطوتك القادمة.",
+
+    "start_url": "/index.html",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+
+    "dir": "rtl",
+    "lang": "ar",
+
+    "background_color": "#F7F8FA",
+    "theme_color": "#2563EB",
+
+    "categories": ["productivity", "education", "personalization"],
+
+    "icons": [
+        {
+            "src": "icons/icon-72.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/icon-96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/icon-128.png",
+            "sizes": "128x128",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/icon-144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/icon-152.png",
+            "sizes": "152x152",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/icon-384.png",
+            "sizes": "384x384",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "icons/icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "icons/icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+
+    "shortcuts": [
+        {
+            "name": "الرئيسية",
+            "short_name": "الرئيسية",
+            "description": "افتح لوحة التحكم",
+            "url": "/dashboard.html",
+            "icons": [
+                {
+                    "src": "icons/icon-96.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "خطوتي الجاية",
+            "short_name": "خطوتي",
+            "description": "شوف خطوتك الحالية",
+            "url": "/next-steps.html",
+            "icons": [
+                {
+                    "src": "icons/icon-96.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "تقدمي",
+            "short_name": "تقدمي",
+            "description": "تابع تقدمك",
+            "url": "/progress.html",
+            "icons": [
+                {
+                    "src": "icons/icon-96.png",
+                    "sizes": "96x96"
+                }
+            ]
+        }
+    ],
+
+    "prefer_related_applications": false
+}

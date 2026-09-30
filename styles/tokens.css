@@ -1,0 +1,63 @@
+/* =====================================================
+   NEXT — DESIGN TOKENS
+   ====================================================== */
+
+:root {
+    --next-blue: #2563EB;
+    --next-dark-blue: #1D4ED8;
+    --next-ink: #111827;
+    --next-muted: #6B7280;
+    --next-muted-strong: #4B5563;
+    --next-bg: #F7F8FA;
+    --next-surface: #FFFFFF;
+    --next-border: #E5E7EB;
+    --next-success: #16A34A;
+    --next-warning: #D97706;
+    --next-danger: #DC2626;
+
+    --next-shadow-soft: 0 1px 2px rgba(17,24,39,.05);
+    --next-shadow-medium: 0 6px 16px rgba(17,24,39,.06);
+    --next-shadow-large: 0 12px 28px rgba(17,24,39,.08);
+
+    --motion-dur-instant: 90ms;
+    --motion-dur-fast: 180ms;
+    --motion-dur-base: 240ms;
+    --motion-dur-slow: 360ms;
+    --motion-dur-slower: 520ms;
+    --motion-dur-page: 420ms;
+    --motion-dur-reveal: 680ms;
+    --motion-dur-question: 380ms;
+
+    --motion-ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+    --motion-ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --motion-distance-xs: 4px;
+    --motion-distance-sm: 8px;
+    --motion-distance-md: 16px;
+    --motion-distance-lg: 24px;
+
+    --motion-stagger-step: 90ms;
+
+    --next-narrow: 720px;
+    --next-wide: 1100px;
+    --next-sidebar-width: 248px;
+    --next-topbar-height: 72px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --motion-dur-instant: 0ms;
+        --motion-dur-fast: 0ms;
+        --motion-dur-base: 0ms;
+        --motion-dur-slow: 0ms;
+        --motion-dur-slower: 0ms;
+        --motion-dur-page: 0ms;
+        --motion-dur-reveal: 0ms;
+        --motion-dur-question: 0ms;
+        --motion-stagger-step: 0ms;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}

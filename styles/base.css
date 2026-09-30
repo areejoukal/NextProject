@@ -1,0 +1,69 @@
+/* =====================================================
+   NEXT — BASE
+   ====================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--next-bg);
+    color: var(--next-ink);
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    opacity: 0;
+    animation: pageEnter var(--motion-dur-page) var(--motion-ease-enter) forwards;
+}
+
+@keyframes pageEnter {
+    to { opacity: 1; }
+}
+
+.font-english,
+.font-latin {
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-next-ink {
+    color: var(--next-ink);
+}
+
+::selection {
+    background: rgba(37, 99, 235, 0.14);
+    color: var(--next-ink);
+}
+
+:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.25);
+    outline-offset: 3px;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body {
+        animation: none;
+        opacity: 1;
+    }
+}

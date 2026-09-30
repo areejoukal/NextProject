@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>مركز قرارك — NEXT</title>
+    <meta name="description" content="لوحة تحكم NEXT — صورتك الحالية، هدفك، وخطوتك القادمة في مكان واحد. كل ما تحتاجه لاتخاذ قرارك التالي بوضوح.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://next.app/dashboard.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEXT">
+    <meta property="og:locale" content="ar_AR">
+    <meta property="og:title" content="مركز قرارك — NEXT">
+    <meta property="og:description" content="صورتك الحالية، هدفك، وخطوتك القادمة في مكان واحد.">
+    <meta property="og:url" content="https://next.app/dashboard.html">
+    <meta property="og:image" content="https://next.app/icons/og-dashboard.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEXT — مركز قرارك">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="مركز قرارك — NEXT">
+    <meta name="twitter:description" content="صورتك الحالية، هدفك، وخطوتك القادمة في مكان واحد.">
+    <meta name="twitter:image" content="https://next.app/icons/og-dashboard.png">
+    <meta name="twitter:image:alt" content="NEXT — مركز قرارك">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#F7F8FA">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/icon-96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/icon-72.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NEXT">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="NEXT">
+
+    <!-- TAILWIND -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        next: {
+                            blue: '#2563EB',
+                            blueDark: '#1D4ED8',
+                            ink: '#111827',
+                            muted: '#6B7280',
+                            mutedStrong: '#4B5563',
+                            bg: '#F7F8FA',
+                            surface: '#FFFFFF',
+                            border: '#E5E7EB',
+                            success: '#16A34A',
+                            warning: '#D97706',
+                            danger: '#DC2626'
+                        }
+                    },
+                    fontFamily: {
+                        arabic: ['IBM Plex Sans Arabic', 'sans-serif'],
+                        poppins: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="styles/tokens.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/motion.css">
+    <link rel="stylesheet" href="styles/pages/dashboard.css">
+</head>
+
+
+<body data-page="dashboard">
+
+    <div class="app-shell">
+
+        <div id="sidebarOverlay" class="sidebar-overlay" aria-hidden="true"></div>
+
+        <!-- SIDEBAR — يُحقن تلقائيًا -->
+        <div data-component="sidebar"></div>
+
+
+        <!-- MAIN -->
+        <div class="main-area">
+
+            <!-- TOPBAR — يُحقن تلقائيًا -->
+            <div data-component="topbar"></div>
+
+
+            <main class="page-container">
+
+                <!-- WELCOME -->
+                <section class="welcome reveal" style="--i: 0;">
+                    <h1 id="welcomeTitle" class="welcome-title">هذا مركز قرارك.</h1>
+                    <p class="welcome-text">
+                        الصورة الحالية، الهدف الحالي، والخطوة القادمة كلها هنا
+                        لمساعدتك على اختيار ما يحتاجك الآن.
+                    </p>
+                </section>
+
+                <!-- GRID -->
+                <div class="dashboard-grid">
+
+                    <!-- POSITION -->
+                    <section class="card position-card reveal" style="--i: 1;">
+                        <div class="card-header">
+                            <div>
+                                <h2 class="card-title">صورتي الحالية</h2>
+                                <p class="card-description">الخلاصة التي وصلنا إليها عن وضعك الآن.</p>
+                            </div>
+                            <a href="analysis.html" class="text-link">التفاصيل</a>
+                        </div>
+
+                        <div class="position-status">
+                            <span class="status-dot" aria-hidden="true"></span>
+                            الصورة الحالية
+                        </div>
+
+                        <h3 id="positionTitle" class="position-title">
+                            لديك اتجاه، لكن ما زالت هناك تفاصيل تحتاج وضوحًا أكبر.
+                        </h3>
+
+                        <p id="positionSummary" class="position-summary">
+                            تعرف ما تسعى إليه، لكن ما زال من المفيد توضيح ما ينقصك،
+                            وما الذي يمكنك تغييره الآن لتتحرك في الاتجاه الصحيح.
+                        </p>
+
+                        <div class="position-meta">
+                            <span class="meta-tag">✓ أشياء واضحة</span>
+                            <span class="meta-tag">? أشياء غير واضحة</span>
+                            <span class="meta-tag">● مساحة تأثير</span>
+                        </div>
+                    </section>
+
+                    <!-- GOAL -->
+                    <section class="card goal-card reveal" style="--i: 2;">
+                        <div class="card-header">
+                            <div>
+                                <h2 class="card-title">هدفي الحالي</h2>
+                                <p class="card-description">ما اخترت أن تفهم وضعك من أجله.</p>
+                            </div>
+                            <a href="goal-details.html" class="text-link">تعديل</a>
+                        </div>
+
+                        <div class="goal-box">
+                            <p class="goal-label">الهدف</p>
+                            <p id="goalValue" class="goal-value">—</p>
+                            <p id="goalDetail" class="goal-detail">—</p>
+                        </div>
+
+                        <a href="goal-details.html" class="text-link">عرض تفاصيل الهدف ←</a>
+                    </section>
+
+                    <!-- CURRENT STEP -->
+                    <section class="card current-step reveal" style="--i: 3;">
+                        <div class="card-header">
+                            <div>
+                                <h2 class="card-title">خطوتك الحالية</h2>
+                                <p class="card-description">الشيء الأكثر فائدة لك الآن.</p>
+                            </div>
+                            <span id="currentStepStatus" style="font-size: 12px; color: var(--next-muted);">
+                                لم تبدأ بعد
+                            </span>
+                        </div>
+
+                        <div class="step-layout">
+                            <div>
+                                <div class="step-number">01</div>
+
+                                <h3 id="currentStepTitle" class="step-title">
+                                    الخطوة التالية تحتاج إلى تحديد ما ينقصك أولًا
+                                </h3>
+
+                                <p id="currentStepReason" class="step-reason">
+                                    هذه الخطوة مرتبطة مباشرة بالأجزاء التي ما زالت غير واضحة في وضعك الحالي.
+                                </p>
+
+                                <div class="step-meta">
+                                    <div class="step-meta-item">
+                                        <span>الوقت:</span>
+                                        <strong id="stepTime">30–45 دقيقة</strong>
+                                    </div>
+                                    <div class="step-meta-item">
+                                        <span>الجهد:</span>
+                                        <strong id="stepEffort">متوسط</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <button
+                                    id="currentStepButton"
+                                    class="primary-button"
+                                    style="width: 100%;"
+                                    type="button"
+                                    data-cta="open-current-step"
+                                >
+                                    <span id="currentStepButtonLabel">فتح الخطوة</span>
+                                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                        <path d="M5 12h14"></path>
+                                        <path d="m13 6 6 6-6 6"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- PROGRESS -->
+                    <section class="card progress-card reveal" style="--i: 4;">
+                        <div class="card-header">
+                            <div>
+                                <h2 class="card-title">تقدمي</h2>
+                                <p class="card-description">تقدمك الفعلي في الخطوات.</p>
+                            </div>
+                            <a href="progress.html" class="text-link">التفاصيل</a>
+                        </div>
+
+                        <div class="progress-header">
+                            <div>
+                                <div id="progressCount" class="progress-count">0</div>
+                                <div class="progress-label">خطوات مكتملة</div>
+                            </div>
+                        </div>
+
+                        <div class="progress-track">
+                            <div id="progressFill" class="progress-fill"></div>
+                        </div>
+
+                        <p class="progress-note">
+                            التقدم هنا يعكس ما أنجزته فعلًا،
+                            وليس توقعًا لمدى نجاحك.
+                        </p>
+                    </section>
+
+                    <!-- UPCOMING -->
+                    <section class="card upcoming-card reveal" style="--i: 5;">
+                        <div class="card-header">
+                            <div>
+                                <h2 class="card-title">بعدها</h2>
+                                <p class="card-description">الخطوات التي تأتي بعد خطوتك الحالية.</p>
+                            </div>
+                            <a href="next-steps.html" class="text-link">كل الخطوات</a>
+                        </div>
+
+                        <div id="upcomingList" class="upcoming-list"></div>
+                    </section>
+
+                    <!-- QUICK ACTIONS -->
+                    <div class="quick-actions reveal" style="--i: 6;">
+
+                        <a href="analysis.html" class="quick-link">
+                            <div class="quick-icon">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M3 3v18h18"></path>
+                                    <path d="m7 16 4-5 3 3 5-7"></path>
+                                </svg>
+                            </div>
+                            <div class="quick-title">راجع موقفي</div>
+                            <div class="quick-description">ارجع إلى الصورة الحالية وشاهد ما تغيّر.</div>
+                        </a>
+
+                        <a href="what-you-can-control.html" class="quick-link">
+                            <div class="quick-icon">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="9"></circle>
+                                    <path d="M12 7v10"></path>
+                                    <path d="M7 12h10"></path>
+                                </svg>
+                            </div>
+                            <div class="quick-title">ما الذي أستطيع تغييره؟</div>
+                            <div class="quick-description">راجع الأمور الواقعة ضمن مساحة تأثيرك.</div>
+                        </a>
+
+                        <a href="reassessment.html" class="quick-link">
+                            <div class="quick-icon">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M3 12a9 9 0 1 0 3-6.7"></path>
+                                    <path d="M3 4v6h6"></path>
+                                </svg>
+                            </div>
+                            <div class="quick-title">أعد فهم وضعي</div>
+                            <div class="quick-description">ارجع إلى التقييم عندما يتغير وضعك أو هدفك.</div>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="scripts/core/storage.js"></script>
+    <script src="scripts/core/session.js"></script>
+    <script src="scripts/core/nav-config.js"></script>
+    <script src="scripts/core/components.js"></script>
+    <script src="scripts/core/ui.js"></script>
+    <script src="scripts/core/motion.js"></script>
+    <script src="scripts/pages/dashboard.js"></script>
+    <!-- PWA Script -->
+    <script src="scripts/core/pwa.js"></script>
+
+</body>
+
+</html>

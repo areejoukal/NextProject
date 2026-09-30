@@ -1,0 +1,532 @@
+/* =====================================================
+   NEXT — GOAL DETAILS PAGE
+   goal-details.html
+   ===================================================== */
+
+/* =====================================================
+   GOAL CARD (البطاقة الرئيسية)
+   ===================================================== */
+
+.goal-card {
+    background: var(--next-surface);
+    border: 1px solid var(--next-border);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--next-shadow-soft);
+    margin-bottom: 24px;
+    transition:
+        border-color var(--motion-dur-base) var(--motion-ease-soft),
+        box-shadow var(--motion-dur-base) var(--motion-ease-soft);
+}
+
+.goal-card:hover {
+    border-color: #D1D5DB;
+    box-shadow: 0 8px 22px rgba(17, 24, 39, 0.06);
+}
+
+/* =====================================================
+   GOAL HEADER
+   ===================================================== */
+
+.goal-header {
+    padding: 32px 32px 28px;
+    border-bottom: 1px solid var(--next-border);
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%);
+}
+
+.goal-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 12px;
+    background: #EFF6FF;
+    color: var(--next-blue);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.goal-label-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--next-blue);
+    animation: softPulse 2400ms var(--motion-ease-soft) infinite;
+}
+
+.goal-title {
+    margin: 0;
+    color: var(--next-ink);
+    font-size: 28px;
+    line-height: 1.4;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+.goal-description {
+    max-width: 720px;
+    margin: 12px 0 0;
+    color: var(--next-muted-strong);
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+/* =====================================================
+   DETAILS GRID (شبكة التفاصيل)
+   ===================================================== */
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    padding: 28px 32px;
+}
+
+.detail-item {
+    padding: 20px;
+    background: #F9FAFB;
+    border: 1px solid #F0F1F3;
+    border-radius: 14px;
+    transition:
+        border-color var(--motion-dur-base) var(--motion-ease-soft),
+        background-color var(--motion-dur-base) var(--motion-ease-soft),
+        transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+.detail-item:hover {
+    border-color: #DBEAFE;
+    background: #F8FAFF;
+    transform: translateY(-2px);
+}
+
+.detail-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--next-muted);
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.detail-label::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--next-blue);
+}
+
+.detail-value {
+    color: var(--next-ink);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+/* =====================================================
+   GOAL NOTE (ملاحظة داخل البطاقة)
+   ===================================================== */
+
+.goal-note {
+    margin: 0 32px 24px;
+    padding: 20px 22px;
+    background: #F8FAFF;
+    border: 1px solid #DBEAFE;
+    border-radius: 14px;
+}
+
+.goal-note-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1E40AF;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.goal-note-title::before {
+    content: 'i';
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border: 1px solid #BFDBFE;
+    color: var(--next-blue);
+    border-radius: 50%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.goal-note-text {
+    color: #1E3A8A;
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+/* =====================================================
+   GOAL ACTIONS (أزرار البطاقة)
+   ===================================================== */
+
+.goal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 32px;
+    background: #FAFBFC;
+    border-top: 1px solid var(--next-border);
+}
+
+.action-description {
+    color: var(--next-muted);
+    font-size: 13px;
+    line-height: 1.7;
+    max-width: 480px;
+}
+
+.actions-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* =====================================================
+   EDIT PANEL (لوحة التعديل)
+   ===================================================== */
+
+.edit-panel {
+    margin-top: 24px;
+    background: var(--next-surface);
+    border: 1px solid var(--next-border);
+    border-radius: 20px;
+    overflow: hidden;
+    display: none;
+}
+
+.edit-panel.open {
+    display: block;
+    animation: sectionFade var(--motion-dur-slow) var(--motion-ease-enter) both;
+}
+
+@keyframes sectionFade {
+    from { opacity: 0; transform: translateY(var(--motion-distance-sm)); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.edit-header {
+    padding: 26px 32px;
+    border-bottom: 1px solid var(--next-border);
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAFBFC 100%);
+}
+
+.edit-title {
+    margin: 0;
+    color: var(--next-ink);
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+}
+
+.edit-description {
+    margin: 6px 0 0;
+    color: var(--next-muted);
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+.edit-body {
+    padding: 28px 32px;
+}
+
+/* =====================================================
+   FORM (نموذج التعديل)
+   ===================================================== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field.full {
+    grid-column: 1 / -1;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--next-ink);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    border: 1px solid var(--next-border);
+    border-radius: 10px;
+    outline: none;
+    background: var(--next-surface);
+    color: var(--next-ink);
+    font-size: 14px;
+    font-family: inherit;
+    transition:
+        border-color var(--motion-dur-fast) var(--motion-ease-soft),
+        box-shadow var(--motion-dur-fast) var(--motion-ease-soft);
+}
+
+.form-input,
+.form-select {
+    height: 48px;
+    padding: 0 14px;
+}
+
+.form-textarea {
+    min-height: 116px;
+    padding: 13px 14px;
+    resize: vertical;
+    line-height: 1.8;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: var(--next-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #9CA3AF;
+}
+
+.form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='1.8'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 14px center;
+    padding-left: 42px;
+}
+
+/* =====================================================
+   CHANGE WARNING (تحذير تغيير الهدف)
+   ===================================================== */
+
+.change-warning {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 24px;
+    padding: 16px 18px;
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
+    border-radius: 12px;
+}
+
+.warning-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: var(--next-warning);
+}
+
+.warning-title {
+    color: #92400E;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.warning-text {
+    color: #78350F;
+    font-size: 12px;
+    line-height: 1.75;
+}
+
+/* =====================================================
+   EDIT ACTIONS (أزرار الحفظ/الإلغاء)
+   ===================================================== */
+
+.edit-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #F0F1F3;
+}
+
+/* =====================================================
+   EMPTY STATE
+   ===================================================== */
+
+.empty-state {
+    padding: 72px 24px;
+    text-align: center;
+}
+
+.empty-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: #EFF6FF;
+    color: var(--next-blue);
+}
+
+.empty-title {
+    color: var(--next-ink);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.empty-text {
+    max-width: 440px;
+    margin: 0 auto;
+    color: var(--next-muted);
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+/* =====================================================
+   TOAST (للصفحة)
+   ===================================================== */
+
+body > .toast {
+    position: fixed;
+    left: 24px;
+    bottom: 24px;
+    z-index: 100;
+    min-width: 260px;
+    max-width: 360px;
+    padding: 14px 18px;
+    background: var(--next-ink);
+    color: #FFFFFF;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+    box-shadow: var(--next-shadow-large);
+    opacity: 0;
+    transform: translateY(var(--motion-distance-sm));
+    pointer-events: none;
+    transition:
+        opacity var(--motion-dur-base) var(--motion-ease-soft),
+        transform var(--motion-dur-base) var(--motion-ease-enter);
+}
+
+body > .toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 900px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .goal-header {
+        padding: 24px 20px 20px;
+    }
+
+    .goal-title {
+        font-size: 22px;
+    }
+
+    .goal-description {
+        font-size: 14px;
+    }
+
+    .details-grid {
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .detail-item {
+        padding: 16px;
+    }
+
+    .goal-note {
+        margin: 0 20px 20px;
+        padding: 16px;
+    }
+
+    .goal-actions {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+    }
+
+    .actions-group {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .actions-group button {
+        width: 100%;
+    }
+
+    .edit-header,
+    .edit-body {
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .edit-actions {
+        flex-direction: column-reverse;
+    }
+
+    .edit-actions button {
+        width: 100%;
+    }
+
+    body > .toast {
+        left: 16px;
+        right: 16px;
+        min-width: 0;
+        max-width: none;
+    }
+}
+
+/* =====================================================
+   REDUCED MOTION
+   ====================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .goal-label-dot {
+        animation: none;
+    }
+
+    .edit-panel.open {
+        animation: none;
+    }
+}
