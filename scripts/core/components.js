@@ -178,6 +178,65 @@
     }
 
     /* =====================================================
+       MOBILE SIDEBAR
+       ===================================================== */
+
+    function initMobileSidebar() {
+        const button  = document.getElementById('mobileMenuButton');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+
+        if (!button || !sidebar) {
+            console.warn('NEXT_COMPONENTS: mobile sidebar elements not found');
+            return;
+        }
+
+        function openSidebar() {
+            sidebar.classList.add('open');
+            if (overlay) overlay.classList.add('active');
+            document.body.classList.add('sidebar-open');
+            button.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeSidebar() {
+            sidebar.classList.remove('open');
+            if (overlay) overlay.classList.remove('active');
+            document.body.classList.remove('sidebar-open');
+            button.setAttribute('aria-expanded', 'false');
+        }
+
+        function toggleSidebar() {
+            if (sidebar.classList.contains('open')) closeSidebar();
+            else openSidebar();
+        }
+
+        // زر المنيو
+        button.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleSidebar();
+        });
+
+        // الضغط على الـ overlay
+        if (overlay) {
+            overlay.addEventListener('click', closeSidebar);
+        }
+
+        // زر ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+                closeSidebar();
+            }
+        });
+
+        // إغلاق تلقائي عند التحويل لسطح المكتب
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 900 && sidebar.classList.contains('open')) {
+                closeSidebar();
+            }
+        });
+    }
+
+    /* =====================================================
        UPDATE PROFILE
        ===================================================== */
 
@@ -233,6 +292,7 @@
         injectSidebar();
         injectTopbar();
         updateNotificationsBadge();
+        initMobileSidebar();
     }
 
     // نشغّلها فورًا — DOM جاهز لأن السكربت في نهاية body
